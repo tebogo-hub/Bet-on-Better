@@ -1,10 +1,16 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import login from '../auth/login';
 
 export default function Login({ navigation}) {
-   
+   const [email, setEmail] = useState('')
+   const [password, setPassword] = useState('')
+
+   function login(){
+       
+   }
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
             <View style={styles.Logo}>
@@ -17,17 +23,22 @@ export default function Login({ navigation}) {
                 <TextInput
                     placeholder="Email"
                     style={styles.TextInput}
+                    onChangeText={(email) => setEmail(email)}
                 />
                 <TextInput
                     placeholder="Password"
                     style={styles.TextInput2}
+                    onChangeText={(pass) => setPassword(pass)}
                 />
             </View>
             <TouchableOpacity style={styles.forgot}>Forgot password ?</TouchableOpacity>
 
             <View>
                 <TouchableOpacity style={styles.touchableOpacity}>
-                    <Text style={styles.logintext}>Login</Text>
+                    <Text 
+                        style={styles.logintext}
+                        onClick={()=> login()}
+                    >Login</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.AccountContainer}>
