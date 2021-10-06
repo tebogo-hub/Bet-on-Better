@@ -1,5 +1,5 @@
 
-const signup =((name, email, password)=>{
+const signup =((name, email, passwords)=>{
 
 
 })
