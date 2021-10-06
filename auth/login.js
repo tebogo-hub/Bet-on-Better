@@ -1,5 +1,5 @@
 
-const login =((name, email, password)=>{
+const login =((name, email, passwords)=>{
 
 
 
