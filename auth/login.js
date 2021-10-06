@@ -1,10 +1,13 @@
 import {firebase} from '../config/firebase'
-const login =((email, passwords)=>{
+export default function login (email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
 
 
 
+}).catch((error) => {
+    var errorMessage = error.message;
+    console.log(errorMessage);
+  });
+}
 
-})
-
-
-export {login}
