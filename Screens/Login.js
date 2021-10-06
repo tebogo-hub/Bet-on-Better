@@ -1,11 +1,12 @@
 
 import React from 'react'
-import { View, StyleSheet, TextInput, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
+import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 
-
-export default function Login() {
+export default function Login({ navigation}) {
+   
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container} source={require('../assets/Background/children.jpg')}>
             <View style={styles.Logo}>
                 <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
             </View>
@@ -29,12 +30,21 @@ export default function Login() {
             </View>
             <View style={styles.AccountContainer}>
                 <Text style={styles.textaccount}>Dont have an Account?</Text>
-                <TouchableOpacity style={styles.textsignup}>Sign up</TouchableOpacity>
+                <TouchableOpacity style={styles.textsignup}  onPress={() => navigation.navigate('Signup')}>Sign up</TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.Facebook}><Text style={styles.text}>Connect with Facebook</Text></TouchableOpacity>
-            <TouchableOpacity></TouchableOpacity>
+            <TouchableOpacity style={styles.Facebook}>
+                <FontAwesome5 name="facebook" size={24} color="white" style={styles.icon1} />
+                <Text style={styles.text}>Connect with Facebook</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.Guest}>
+                <Ionicons name="people" size={24} color="white" style={styles.icon2} />
+                <Text style={styles.text2}>Continue as Guest</Text>
+            </TouchableOpacity>
+            <View>
+                <Text style={styles.textbottom}>By helping a soul, together we can change the world.</Text>
+            </View>
 
-        </View>
+        </ImageBackground>
     )
 }
 
@@ -45,10 +55,10 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
+
     },
     Logo: {
         marginHorizontal: '1%',
-        marginVertical: '1%',
         display: 'flex',
         flexDirection: 'row',
     },
@@ -57,61 +67,68 @@ const styles = StyleSheet.create({
     },
     Bet: {
         position: 'absolute',
-        width: '56px',
+        color: 'white',
         height: '42px',
         left: '42px',
         top: '97px',
-        fontFamily: 'arial',
+        fontFamily: 'arial black',
         fontStyle: 'normal',
         fontWeight: '100',
-        fontSize: '36px',
+        fontSize: '30px',
         lineHeight: '42px',
     },
     on: {
         position: 'absolute',
-        width: '41px',
+        // width: '41px',
         height: '42px',
-        left: '95px',
+        left: '100px',
         top: '97px',
-        fontFamily: 'arial',
+        fontFamily: 'arial black',
         fontStyle: 'normal',
         fontWeight: '100',
-        fontSize: '36px',
+        fontSize: '30px',
         lineHeight: '42px',
         color: 'rgba(94, 206, 253, 1)',
     },
     better: {
         position: 'absolute',
-        width: '101px',
+        color: 'white',
         height: '42px',
         left: '8%',
         top: '125px',
-        fontFamily: 'arial',
+        fontFamily: 'arial black',
         fontStyle: 'normal',
         fontWeight: '100',
-        fontSize: '36px',
+        fontSize: '30px',
         lineHeight: '42px',
     },
     inputContainer: {
         marginHorizontal: '1%',
         marginVertical: '50%',
-
+        bottom: '50px',
     },
     TextInput: {
-        borderBottomWidth: '1px',
+        borderWidth: '1px',
         position: 'absolute',
         width: '300px',
         left: '37px',
         top: '100px',
-        outline: 'none',
+        padding: '5px',
+        borderColor: 'background: rgba(94, 206, 253, 1)',
+        height: '35px',
+        color: 'white',
     },
     TextInput2: {
-        borderBottomWidth: '1px',
+        borderWidth: '1px',
         position: 'absolute',
         width: '300px',
         left: '37px',
         top: '150px',
         outline: 'none',
+        padding: '5px',
+        height: '35px',
+        borderColor: 'rgba(63, 131, 224, 1)',
+        color: 'white',
     },
     touchableOpacity: {
         position: 'absolute',
@@ -121,6 +138,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(63, 131, 224, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '16px',
+        top: '10px',
     },
     logintext: {
         position: 'absolute',
@@ -151,6 +169,7 @@ const styles = StyleSheet.create({
         fontweight: 'normal',
         fontSize: '14px',
         lineHeight: '16px',
+        color: 'white',
     },
     textsignup: {
         position: 'absolute',
@@ -171,7 +190,7 @@ const styles = StyleSheet.create({
         left: '37px',
         top: '589px',
         backgroundColor: 'background: rgba(94, 206, 253, 1)',
-        boxShadow: '0px 4px 4px rgba (0, 0, 0, 0.25)',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '15px',
     },
     text: {
@@ -186,8 +205,57 @@ const styles = StyleSheet.create({
         lineHeight: '21px',
         color: 'white',
         top: '20px',
+    },
+    Guest: {
+        position: 'absolute',
+        width: '300px',
+        height: '59px',
+        left: '37px',
+        top: '671px',
+        backgroundColor: 'rgba(63, 131, 224, 1)',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '15px',
+    },
+    text2: {
+        position: 'absolute',
+        height: '21px',
+        left: '65px',
+        top: '20px',
+        fontFamily: 'arial',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '18px',
+        lineHeight: '21px',
+        color: 'white',
+    },
+    textbottom: {
+        position: 'absolute',
+        height: '14px',
+        left: '34px',
+        top: '300px',
+        fontFamily: 'arial',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '12px',
+        color: 'rgba(94, 206, 253, 1)',
+    },
+    facebookicon: {
+        position: 'absolute',
+        width: '30px',
+        height: '30px',
+        left: '57px',
+        top: '50px',
 
-
+    },
+    icon1: {
+        position: 'absolute',
+        left: '10px',
+        top: '17px',
+    },
+    icon2: {
+        position: 'absolute',
+        left: '10px',
+        top: '14px',
     }
 
 
