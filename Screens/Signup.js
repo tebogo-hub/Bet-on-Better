@@ -1,8 +1,19 @@
 
-import React from 'react'
+import React,{useState} from 'react'
+import { signup } from '../auth/signup'
 import { View, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
 
 export default function Signup({ navigation}) {
+    const [Fname,setFname] = useState('')
+    const [email,setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+
+    const SignUp = () =>{
+        signup({Fname,email,password})
+        navigation.navigate('Login')
+    }
+
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
             <View style={styles.Logo}>
@@ -16,24 +27,28 @@ export default function Signup({ navigation}) {
                 <TextInput
                     placeholder="Full Name"
                     style={styles.TextInput}
+                    onChangeText={(Fname) => setFname(Fname)}
                 />
                 <TextInput
                     placeholder="Email"
                     style={styles.TextInput2}
+                    onChangeText={(email) => setEmail(email)}
                 />
 
                 <TextInput
                     placeholder="Password"
                     style={styles.TextInput3}
+                    onChangeText={(password) => setPassword(password)}
                 />
 
                 <TextInput
                     placeholder="Confirm Password"
                     style={styles.TextInput4}
+                    onChangeText={(confirmPassword) => setConfirmPassword(confirmPassword)}
                 />
             </View>
             <View>
-                <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Login')}>
+                <TouchableOpacity style={styles.touchableOpacity} onPress={() => SignUp()}>
                     <Text style={styles.logintext}>Sign up</Text>
                 </TouchableOpacity>
             </View>
