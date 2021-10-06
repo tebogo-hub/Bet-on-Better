@@ -1,7 +1,8 @@
 
 import React,{useState} from 'react'
-import { signup } from '../auth/signup'
+import { FirebaseSignUp } from '../auth/FirebaseSignUp'
 import { View, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
+import { firebase } from '../config/firebase'
 
 export default function Signup({ navigation}) {
     const [Fname,setFname] = useState('')
@@ -10,7 +11,10 @@ export default function Signup({ navigation}) {
     const [confirmPassword, setConfirmPassword] = useState('')
 
     const SignUp = () =>{
-        signup({Fname,email,password})
+        return(
+            <FirebaseSignUp Fname={Fname} email={email} password= {password} />
+        )
+        
         navigation.navigate('Login')
     }
 

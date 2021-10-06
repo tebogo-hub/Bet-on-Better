@@ -1,6 +1,6 @@
 import { firebase } from "../config"
 
-const signup =((name, email, password)=>{
+const FirebaseSignUp =((name, email, password)=>{
     let datab = firebase.firestore()
     firebase.auth() .createUserWithEmailAndPassword(name, email, password)
     .then((userCredential) => {
@@ -8,4 +8,4 @@ const signup =((name, email, password)=>{
 })
 })
 
-export {signup}
+export {FirebaseSignUp}
