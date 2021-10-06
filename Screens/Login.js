@@ -6,7 +6,7 @@ import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 export default function Login({ navigation}) {
    
     return (
-        <ImageBackground style={styles.container} source={require('../assets/Background/children.jpg')}>
+        <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
             <View style={styles.Logo}>
                 <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
             </View>
@@ -23,6 +23,8 @@ export default function Login({ navigation}) {
                     style={styles.TextInput2}
                 />
             </View>
+            <TouchableOpacity style={styles.forgot}>Forgot password ?</TouchableOpacity>
+
             <View>
                 <TouchableOpacity style={styles.touchableOpacity}>
                     <Text style={styles.logintext}>Login</Text>
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontWeight: '100',
         fontSize: '30px',
-        lineHeight: '42px',
+        lineHeight: '42px',   
     },
     on: {
         position: 'absolute',
@@ -117,6 +119,7 @@ const styles = StyleSheet.create({
         borderColor: 'background: rgba(94, 206, 253, 1)',
         height: '35px',
         color: 'white',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
     },
     TextInput2: {
         borderWidth: '1px',
@@ -129,6 +132,7 @@ const styles = StyleSheet.create({
         height: '35px',
         borderColor: 'rgba(63, 131, 224, 1)',
         color: 'white',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
     },
     touchableOpacity: {
         position: 'absolute',
@@ -256,11 +260,17 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: '10px',
         top: '14px',
-    }
-
-
-
-
-
+    },
+    forgot: {
+        position: 'relative',
+        textAlign:'center',
+        color: 'white',
+        fontFamily: 'arial',
+        fontStyle: 'normal',
+        fontWeight: 'bolder',
+        fontSize: '12px',
+        bottom: '6%',
+        paddingLeft: '49%',
+    },
 })
 

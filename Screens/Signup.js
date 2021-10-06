@@ -2,9 +2,9 @@
 import React from 'react'
 import { View, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
 
-export default function Signup() {
+export default function Signup({ navigation}) {
     return (
-        <ImageBackground style={styles.container} source={require('../assets/Background/children.jpg')}>
+        <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
             <View style={styles.Logo}>
                 <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
             </View>
@@ -33,11 +33,13 @@ export default function Signup() {
                 />
             </View>
             <View>
-                <TouchableOpacity style={styles.touchableOpacity}>
+                <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.logintext}>Sign up</Text>
                 </TouchableOpacity>
             </View>
-
+            <View>
+                <Text style={styles.textbottom}>By helping a soul, together we can change the world.</Text>
+            </View>
         </ImageBackground>
     )
 }
@@ -99,7 +101,6 @@ const styles = StyleSheet.create({
         marginHorizontal: '1%',
         marginVertical: '50%',
         bottom: '50px',
-
     },
     TextInput: {
         borderWidth: '1px',
@@ -123,7 +124,6 @@ const styles = StyleSheet.create({
         height: '35px',
         borderColor: 'rgba(63, 131, 224, 1)',
         color: 'white',
-
     },
     TextInput3: {
         borderWidth: '1px',
@@ -153,15 +153,14 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: '300px',
         height: '59px',
-        left: '37px',
+        left: '40px',
         backgroundColor: 'rgba(63, 131, 224, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '16px',
-        top: '10px',
+        top: '80px',
     },
     logintext: {
         position: 'absolute',
-        width: '50px',
         height: '21px',
         left: '40%',
         fontFamily: 'arial',
@@ -171,6 +170,17 @@ const styles = StyleSheet.create({
         lineHeight: '21px',
         color: 'white',
         top: '20px',
+    },
+    textbottom: {
+        position: 'absolute',
+        height: '14px',
+        left: '34px',
+        top: '400px',
+        fontFamily: 'arial',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '12px',
+        color: 'rgba(94, 206, 253, 1)',
     },
 
 
