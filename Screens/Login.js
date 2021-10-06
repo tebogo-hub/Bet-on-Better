@@ -2,14 +2,16 @@
 import React, {useState} from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
-import login from '../auth/login';
+import FirebaseLogin from '../auth/FirebaseLogin';
 
 export default function Login({ navigation}) {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
 
    function login(){
-       
+       return(
+           <FirebaseLogin email={email} password={password} />
+       )
    }
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
