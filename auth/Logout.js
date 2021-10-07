@@ -1,6 +1,8 @@
 import {firebase} from '../config/firebase'
-const Logout=() => {
+import Login from '../Screens/Login'
+const Logout=({navigation}) => {
     firebase.auth().signOut()
+    navigation.navigate(Login)
 }
 
 export default Logout
