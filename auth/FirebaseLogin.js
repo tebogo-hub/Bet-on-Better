@@ -1,14 +1,17 @@
 import {firebase} from '../config/firebase'
+import Alerts from './Alerts'
 export default function FirebaseLogin (email, password) {
-    console.log(email, password)
+    let msg
     
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
-        alert('Signed in')})
+        msg = 'signed in'
+    })    
     .catch((error) => {
         var errorMessage = error.message;
         console.log(errorMessage);
     })
+    Alerts(msg)
     
     
     
