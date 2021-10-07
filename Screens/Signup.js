@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         left: '37px',
         top: '100px',
         padding: '5px',
-        borderColor: ' rgba(94, 206, 253, 1)',
+        borderColor:'rgba(229, 229, 229, 1);',
         height: '35px',
         color: 'white',
     },
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         outline: 'none',
         padding: '5px',
         height: '35px',
-        borderColor: 'rgba(63, 131, 224, 1)',
+        borderColor:'rgba(229, 229, 229, 1);',
         color: 'white',
     },
     TextInput3: {
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         top: '200px',
         outline: 'none',
         padding: '5px',
-        borderColor: 'rgba(94, 206, 253, 1)',
+        borderColor:'rgba(229, 229, 229, 1);',
         color: 'white',
         left: '37px',
     },
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         top: '250px',
         outline: 'none',
         padding: '5px',
-        borderColor: 'rgba(63, 131, 224, 1)',
+        borderColor:'rgba(229, 229, 229, 1);',
         color: 'white',
         left: '37px',
     },
@@ -182,6 +182,4 @@ const styles = StyleSheet.create({
         fontSize: '12px',
         color: 'rgba(94, 206, 253, 1)',
     },
-
-
 })
