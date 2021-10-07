@@ -26,6 +26,8 @@ export default function Login({ navigation}) {
             <View style={styles.logo2}>
                 <Text style={styles.better}>Better</Text>
             </View>
+
+            {/* place holders for text inputs*/}
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Email"
@@ -38,9 +40,10 @@ export default function Login({ navigation}) {
                     onChangeText={(pass) => setPassword(pass)}
                 />
             </View>
-            <TouchableOpacity style={styles.forgot}>Forgot password ?</TouchableOpacity>
-
+            <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('Forgotpassword')}>Forgot password ?</TouchableOpacity>
             <View>
+                <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Home')}/>
+                    <Text style={styles.logintext}>Login</Text>
                 <TouchableOpacity style={styles.touchableOpacity}>
                     <Text 
                         style={styles.logintext}
@@ -79,7 +82,6 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
-
     },
     Logo: {
         marginHorizontal: '1%',
@@ -138,10 +140,11 @@ const styles = StyleSheet.create({
         left: '37px',
         top: '100px',
         padding: '5px',
-        borderColor: 'background: rgba(94, 206, 253, 1)',
         height: '35px',
         color: 'white',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderColor:'rgba(229, 229, 229, 1);',
+        
     },
     TextInput2: {
         borderWidth: '1px',
@@ -152,9 +155,9 @@ const styles = StyleSheet.create({
         outline: 'none',
         padding: '5px',
         height: '35px',
-        borderColor: 'rgba(63, 131, 224, 1)',
         color: 'white',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderColor:'rgba(229, 229, 229, 1);',
     },
     touchableOpacity: {
         position: 'absolute',
@@ -165,6 +168,7 @@ const styles = StyleSheet.create({
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '16px',
         top: '10px',
+        transform: 'scale(1.1)'
     },
     logintext: {
         position: 'absolute',
