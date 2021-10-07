@@ -1,4 +1,4 @@
-import { Alert } from "react-native"
+
 import { firebase } from "../config/firebase"
 import Alerts from "./Alerts"
 
