@@ -1,5 +1,5 @@
-const LoginGuest= ({navigation}) =>{
-    navigation.navigate()
-}
+const LoginGuest= ((navivi) =>{
+    navivi.navigate('Home')
+})
 
-export default LoginGuest
+export {LoginGuest}

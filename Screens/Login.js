@@ -3,20 +3,20 @@ import React, {useState} from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import FirebaseLogin from '../auth/FirebaseLogin';
-import LoginGuest from '../auth/LoginGuest';
+import {LoginGuest} from '../auth/LoginGuest';
 
 export default function Login({ navigation}) {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
 
-   const login = ()=>{
-       FirebaseLogin(email, password)
+   const login = (navi)=>{
+       FirebaseLogin(email, password,navi)
        setEmail('')
        setPassword('')
        
    }
-   const Guest = () =>{
-       LoginGuest()
+   const Guest = (navi) =>{
+       LoginGuest(navi)
    }
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
@@ -47,7 +47,7 @@ export default function Login({ navigation}) {
                 <TouchableOpacity style={styles.touchableOpacity}>
                     <Text 
                         style={styles.logintext}
-                        onClick={()=> login()}
+                        onClick={()=> login(navigation)}
                     >Login</Text>
                 </TouchableOpacity>
             </View>
@@ -61,7 +61,7 @@ export default function Login({ navigation}) {
             </TouchableOpacity>
             <TouchableOpacity 
                 style={styles.Guest}
-                onClick= {()=>Guest()}
+                onPress= {()=>Guest(navigation)}
                 >
                     <Ionicons name="people" size={24} color="white" style={styles.icon2} />
                     <Text style={styles.text2}>Continue as Guest</Text>

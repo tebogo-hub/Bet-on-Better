@@ -10,8 +10,7 @@ export default function Signup({ navigation}) {
     const [confirmPassword, setConfirmPassword] = useState('')
 
     const FirebaseSign = (navi) =>{
-       FirebaseSignUp(Fname,email,password)
-       Naviga(navi)
+       FirebaseSignUp(Fname,email,password,navi)
     }
 
     return (
