@@ -38,16 +38,13 @@ export default function Login({ navigation}) {
             </View>
             <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('Forgotpassword')}>Forgot password ?</TouchableOpacity>
             <View>
-<<<<<<< HEAD
-                <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Home')}/>
                     <Text style={styles.logintext}>Login</Text>
-=======
                 <TouchableOpacity style={styles.touchableOpacity}>
                     <Text 
                         style={styles.logintext}
                         onClick={()=> login()}
                     >Login</Text>
->>>>>>> fa7b6e55f80353fc1e9d848fa56fe049f4e904ec
                 </TouchableOpacity>
             </View>
             <View style={styles.AccountContainer}>
