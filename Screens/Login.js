@@ -8,10 +8,10 @@ export default function Login({ navigation}) {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
 
-   function login(){
-       return(
-           <FirebaseLogin email={email} password={password} />
-       )
+   const login = ()=>{
+
+       FirebaseLogin(email, password)
+       
    }
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
