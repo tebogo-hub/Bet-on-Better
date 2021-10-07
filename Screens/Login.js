@@ -1,10 +1,19 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import FirebaseLogin from '../auth/FirebaseLogin';
 
 export default function Login({ navigation}) {
-   
+   const [email, setEmail] = useState('')
+   const [password, setPassword] = useState('')
+
+   const login = ()=>{
+       FirebaseLogin(email, password)
+       setEmail('')
+       setPassword('')
+       
+   }
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
             <View style={styles.Logo}>
@@ -19,16 +28,26 @@ export default function Login({ navigation}) {
                 <TextInput
                     placeholder="Email"
                     style={styles.TextInput}
+                    onChangeText={(email) => setEmail(email)}
                 />
                 <TextInput
                     placeholder="Password"
                     style={styles.TextInput2}
+                    onChangeText={(pass) => setPassword(pass)}
                 />
             </View>
             <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('Forgotpassword')}>Forgot password ?</TouchableOpacity>
             <View>
+<<<<<<< HEAD
                 <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Home')}>
                     <Text style={styles.logintext}>Login</Text>
+=======
+                <TouchableOpacity style={styles.touchableOpacity}>
+                    <Text 
+                        style={styles.logintext}
+                        onClick={()=> login()}
+                    >Login</Text>
+>>>>>>> fa7b6e55f80353fc1e9d848fa56fe049f4e904ec
                 </TouchableOpacity>
             </View>
             <View style={styles.AccountContainer}>
