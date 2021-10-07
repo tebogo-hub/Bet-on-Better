@@ -2,7 +2,6 @@
 import React,{useState} from 'react'
 import { FirebaseSignUp } from '../auth/FirebaseSignUp'
 import { View, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
-import { firebase } from '../config/firebase'
 
 export default function Signup({ navigation}) {
     const [Fname,setFname] = useState('')
@@ -10,12 +9,8 @@ export default function Signup({ navigation}) {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const SignUp = () =>{
-        return(
-            <FirebaseSignUp Fname={Fname} email={email} password= {password} />
-        )
-        
-        navigation.navigate('Login')
+    const FirebaseSign = () =>{
+        FirebaseSignUp(Fname,email,password)
     }
 
     return (
@@ -52,7 +47,7 @@ export default function Signup({ navigation}) {
                 />
             </View>
             <View>
-                <TouchableOpacity style={styles.touchableOpacity} onPress={() => SignUp()}>
+                <TouchableOpacity style={styles.touchableOpacity} onPress={() => FirebaseSign()}>
                     <Text style={styles.logintext}>Sign up</Text>
                 </TouchableOpacity>
             </View>
