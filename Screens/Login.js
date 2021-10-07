@@ -9,8 +9,9 @@ export default function Login({ navigation}) {
    const [password, setPassword] = useState('')
 
    const login = ()=>{
-
        FirebaseLogin(email, password)
+       setEmail('')
+       setPassword('')
        
    }
     return (
