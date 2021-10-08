@@ -6,10 +6,8 @@ export default function FirebaseLogin(email, password,navi) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-        Alerts(msg);
+      Alerts(msg);
       navi.navigate("Home");
-      setPassword("");
-      setEmail("");
       var user = userCredential.user;
     })
     .catch((error) => {
