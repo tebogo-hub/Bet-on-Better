@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import FirebaseLogin from '../auth/FirebaseLogin';
+import { continueWithFacebook } from '../auth/continueWithFacebook';
 
 
 export default function Login({ navigation}) {
@@ -13,6 +14,9 @@ export default function Login({ navigation}) {
        FirebaseLogin(email, password, navigation);
        setEmail("");
        setPassword("");
+   }
+   const facebook = () =>{
+       continueWithFacebook();
    }
    
     return (
@@ -52,9 +56,12 @@ export default function Login({ navigation}) {
                 <Text style={styles.textaccount}>Dont have an Account?</Text>
                 <TouchableOpacity style={styles.textsignup}  onPress={() => navigation.navigate('Signup')}>Sign up</TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.Facebook}>
-                <FontAwesome5 name="facebook" size={24} color="white" style={styles.icon1} />
-                <Text style={styles.text}>Connect with Facebook</Text>
+            <TouchableOpacity 
+                style={styles.Facebook}
+                onPress={()=> facebook()}
+                >
+                    <FontAwesome5 name="facebook" size={24} color="white" style={styles.icon1} />
+                    <Text style={styles.text}>Connect with Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity 
                 style={styles.Guest}
