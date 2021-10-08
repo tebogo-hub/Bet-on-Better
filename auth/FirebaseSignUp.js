@@ -1,5 +1,5 @@
 import { firebase } from "../config/firebase";
-import Alerts from "./Alerts";
+import Alerting from "./Alerting";
 const FirebaseSignUp = (name, email, password,navi) => {
   let msg = "Successfully Signed Up!!";
   let datab = firebase.firestore();
@@ -11,7 +11,7 @@ const FirebaseSignUp = (name, email, password,navi) => {
         name: name,
         email: email,
       });
-      Alerts(msg);
+      Alerting(msg);
      navi.navigate('Login')
     })
     .catch((err) => console.log(err));
