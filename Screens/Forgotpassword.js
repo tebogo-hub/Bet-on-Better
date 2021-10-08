@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, View, TextInput, Text, TouchableOpacity, ImageBackground} from 'react-native'
-
+import {forgotpassword} from '../auth/forgotpassword'
 function Forgotpassword({navigation}) {
+    const [email,setEmail] = useState('')
+    const ResetPassword = (navigation)=>{
+        forgotpassword(email,navigation)
+    }
     return (
         <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
        
@@ -11,9 +15,10 @@ function Forgotpassword({navigation}) {
                 <TextInput
                   placeholder=" Your E-mail Address "
                   style={styles.TextInput}
+                  onChangeText={(email) => setEmail(email)}
                 />
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.resetpassword} onPress={() => navigation.navigate('Login')}>Reset Password</Text>
+                    <Text style={styles.resetpassword} onPress={() => ResetPassword(navigation)}>Reset Password</Text>
                 </TouchableOpacity>
             </View>
 

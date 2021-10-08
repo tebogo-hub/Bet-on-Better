@@ -4,6 +4,7 @@ import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } 
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import FirebaseLogin from '../auth/FirebaseLogin';
 import {LoginGuest} from '../auth/LoginGuest';
+import { forgotpassword } from '../auth/forgotpassword';
 
 export default function Login({ navigation}) {
    const [email, setEmail] = useState('')
