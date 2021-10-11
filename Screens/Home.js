@@ -17,18 +17,17 @@ export default function Home({ navigation }) {
                 pagingEnabled={true}
                 style={styles.scrollcontainer}
             >
-                <View style={styles.cardContainer}>
-                    <View style={styles.imageContainer}>
-                    </View>
+                <View style={styles.cardContainer} onPress={() => navigation.navigate('Popup')}>
+                <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children.jpg')}/>
                     <Text style={styles.headerText}>Giving Hope</Text>
                     <Text style={styles.contentText}>
                         Giving hope to the hopeless.
                         together we can give hope and help a soul for better tomorrow.
                     </Text>
+                    
                 </View>
                 <View style={styles.cardContainer2}>
-                    <View style={styles.imageContainer}>
-                    </View>
+                    <ImageBackground style={styles.imageContainer} source={require('../assets/Background/girl.jpg')}/>
                     <Text style={styles.headerText}>Bet on Better</Text>
                     <Text style={styles.contentText}>
                         Giving hope to the hopeless.
@@ -37,8 +36,7 @@ export default function Home({ navigation }) {
 
                 </View>
                 <View style={styles.cardContainer3}>
-                    <View style={styles.imageContainer}>
-                    </View>
+                <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children-2.jpg')}/>
                     <Text style={styles.headerText}>Bet on Better</Text>
                     <Text style={styles.contentText}>
                         Giving hope to the hopeless.
