@@ -8,18 +8,18 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import Alerts from "../auth/Alerts";
+import Alerting from "../auth/Alerting";
 
 export default function Signup({ navigation }) {
   const [Fname, setFname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+ let title = 'OOPS'
   let message = "passwords doesn't match!";
   const FirebaseSign = (navi) => {
     if (password == "" || confirmPassword == "" || password !== confirmPassword) {
-      Alerts(message);
+      Alerting(title, message);
       setPassword("")
       setConfirmPassword("")
     } else {

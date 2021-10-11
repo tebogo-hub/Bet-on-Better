@@ -1,7 +1,15 @@
 import React from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
-
+import { MapView,Marker } from 'react-native-maps';
 export default function Home({ navigation }) {
+    let lat;
+    let lon;
+    navigator.geolocation.getCurrentPosition(success=>{
+        let {latitude, longitude} = success.coords;
+        lat =latitude;
+        lon = longitude;
+
+    })
     return (
         <SafeAreaView style={styles.container}>
             <TextInput
@@ -9,9 +17,17 @@ export default function Home({ navigation }) {
                 style={styles.searchbar}
             />
 
-            <View style={styles.mapsectionContainer}>
-
-            </View>
+            
+            {/*<MapView
+                style={styles.mapsectionContainer}
+                initialRegion={{
+                latitude: -28.7154773,
+                longitude:  24.7348093,
+                latitudeDelta: 0.021,
+                longitudeDelta: 0.0421,
+                }}
+            />*/}
+            
             <ScrollView horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
