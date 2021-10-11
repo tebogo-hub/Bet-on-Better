@@ -2,7 +2,7 @@ import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
 
-function Popup() {
+function Popup({navigation}) {
     return (
         <SafeAreaView style={styles.Container}>
             <ScrollView style={styles.ImageScrollView}
@@ -14,9 +14,7 @@ function Popup() {
                 <ImageBackground style={styles.imageContainer2} source={require('../assets/Background/girl.jpg')}></ImageBackground>
                 <ImageBackground style={styles.imageContainer3} source={require('../assets/Background/hope.png')}></ImageBackground>
             </ScrollView>
-            {/* <View>
-                <Text style={styles.Heading}>Discription</Text>
-            </View> */}
+      
             <Text style={styles.subheading}>Giving Hope</Text>
             <Text style={styles.contentText}>
                 Giving hope to the hopeless and together we can build
@@ -50,7 +48,7 @@ function Popup() {
                     Kimberley
                     8345
                 </Text>
-                <TouchableOpacity style={styles.touchableOpacity}>
+                <TouchableOpacity style={styles.touchableOpacity}onPress={() => navigation.navigate('Donate')}>
                     <Text style={styles.touchable}>View</Text>
                 </TouchableOpacity>
             </View>

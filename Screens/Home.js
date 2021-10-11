@@ -21,14 +21,17 @@ export default function Home({ navigation }) {
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
                 style={styles.scrollcontainer}
-            >
-                <View style={styles.cardContainer} onPress={() => navigation.navigate('Popup')}>
+             >
+                <View style={styles.cardContainer} >
                 <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children.jpg')}/>
                     <Text style={styles.headerText}>Giving Hope</Text>
                     <Text style={styles.contentText}>
                         Giving hope to the hopeless.
                         together we can give hope and help a soul for better tomorrow.
                     </Text>
+                    <TouchableOpacity style={styles.buttonView} onPress={() => navigation.navigate('Popup')}>
+                        <Text style={styles.view}>View</Text>
+                    </TouchableOpacity>
                     
                 </View>
                 <View style={styles.cardContainer2}>
@@ -38,6 +41,9 @@ export default function Home({ navigation }) {
                         Giving hope to the hopeless.
                         together we can give hope and help a soul for better tomorrow.
                     </Text>
+                    <TouchableOpacity style={styles.buttonView} onPress={() => navigation.navigate('Popup')}>
+                        <Text style={styles.view}>View</Text>
+                    </TouchableOpacity>
 
                 </View>
                 <View style={styles.cardContainer3}>
@@ -47,6 +53,9 @@ export default function Home({ navigation }) {
                         Giving hope to the hopeless.
                         together we can give hope and help a soul for better tomorrow.
                     </Text>
+                    <TouchableOpacity style={styles.buttonView} onPress={() => navigation.navigate('Popup')}>
+                        <Text style={styles.view}>View</Text>
+                    </TouchableOpacity>
 
                     <Text style={styles.textbottom}>
                         By helping a soul, together we can change the world.
@@ -160,6 +169,27 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: "12px",
         color: "rgba(94, 206, 253, 1)",
+      },
+      buttonView: {
+          position: "absolute",
+          width: '164px',
+          height: '15px',
+          left: '24px',
+          top: '100px',
+          backgroundColor: 'rgba(94, 206, 253, 1)',
+          borderRadius: '10px',
+      },
+      view: {
+          position:'absolute',
+          width:'29px',
+          height: '15px',
+          left: '75px',
+          fontFamily:'arial',
+          fontStyle:'normal',
+          fontWeight:'normal',
+          fontSize:'13px',
+          lineHeight:'15px',
+          color:'white',
       },
 })
 
