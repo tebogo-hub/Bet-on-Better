@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
-import { MapView,Marker } from 'react-native-maps';
+import Map from '../auth/Components/Map';
 export default function Home({ navigation }) {
     let lat;
     let lon;
@@ -16,18 +16,7 @@ export default function Home({ navigation }) {
                 placeholder="  Search  "
                 style={styles.searchbar}
             />
-
-            
-            {/*<MapView
-                style={styles.mapsectionContainer}
-                initialRegion={{
-                latitude: -28.7154773,
-                longitude:  24.7348093,
-                latitudeDelta: 0.021,
-                longitudeDelta: 0.0421,
-                }}
-            />*/}
-            
+            {/*<Map />*/}
             <ScrollView horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
@@ -88,16 +77,7 @@ const styles = StyleSheet.create({
         outline: 'none',
         borderRadius: '16px',
     },
-    mapsectionContainer: {
-        position: 'absolute',
-        width: '359px',
-        height: '366px',
-        left: 8,
-        top: 185,
-        backgroundColor: 'white',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '16px',
-    },
+    
     scrollcontainer: {
         position: 'absolute',
         width: '375px',
