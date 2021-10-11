@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
                 placeholder="  Search  "
                 style={styles.searchbar}
             />
-            {/*<Map />*/}
+            <Map />
             <ScrollView horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
