@@ -16,14 +16,12 @@ export default function App({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/*<Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Signup" component={Signup}/>
         <Stack.Screen name="Forgotpassword" component={Forgotpassword}/> 
         <Stack.Screen name="Home" component={Home}/> 
         <Stack.Screen name="Popup" component={Popup}/> 
-        */}
         <Stack.Screen name="Donate" component={Donate}/>
-        
       </Stack.Navigator>
     </NavigationContainer>
   );
