@@ -4,9 +4,9 @@ import Map from '../auth/Components/Map';
 export default function Home({ navigation }) {
     let lat;
     let lon;
-    navigator.geolocation.getCurrentPosition(success=>{
-        let {latitude, longitude} = success.coords;
-        lat =latitude;
+    navigator.geolocation.getCurrentPosition(success => {
+        let { latitude, longitude } = success.coords;
+        lat = latitude;
         lon = longitude;
 
     })
@@ -16,53 +16,46 @@ export default function Home({ navigation }) {
                 placeholder="  Search  "
                 style={styles.searchbar}
             />
-            <Map/>
+            <Map />
             <ScrollView horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
                 style={styles.scrollcontainer}
-             >
-                <View style={styles.cardContainer} >
-                <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children.jpg')}/>
-                    <Text style={styles.headerText}>Giving Hope</Text>
-                    <Text style={styles.contentText}>
-                        Giving hope to the hopeless.
-                        together we can give hope and help a soul for better tomorrow.
-                    </Text>
-                    <TouchableOpacity style={styles.buttonView} onPress={() => navigation.navigate('Popup')}>
-                        <Text style={styles.view}>View</Text>
-                    </TouchableOpacity>
-                    
-                </View>
-                <View style={styles.cardContainer2}>
-                    <ImageBackground style={styles.imageContainer} source={require('../assets/Background/girl.jpg')}/>
-                    <Text style={styles.headerText}>Bet on Better</Text>
-                    <Text style={styles.contentText}>
-                        Giving hope to the hopeless.
-                        together we can give hope and help a soul for better tomorrow.
-                    </Text>
-                    <TouchableOpacity style={styles.buttonView} onPress={() => navigation.navigate('Popup')}>
-                        <Text style={styles.view}>View</Text>
-                    </TouchableOpacity>
+            >
+                <View style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate('Popup')}>
+                        <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children.jpg')} />
+                        <Text style={styles.headerText}>Giving Hope</Text>
+                        <Text style={styles.contentText}>
+                            Giving hope to the hopeless.
+                            together we can give hope and help a soul for better tomorrow.
+                        </Text>
 
-                </View>
-                <View style={styles.cardContainer3}>
-                <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children-2.jpg')}/>
-                    <Text style={styles.headerText}>Bet on Better</Text>
-                    <Text style={styles.contentText}>
-                        Giving hope to the hopeless.
-                        together we can give hope and help a soul for better tomorrow.
-                    </Text>
-                    <TouchableOpacity style={styles.buttonView} onPress={() => navigation.navigate('Popup')}>
-                        <Text style={styles.view}>View</Text>
+
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.cardContainer2} onPress={() => navigation.navigate('Popup')}>
+                        <ImageBackground style={styles.imageContainer} source={require('../assets/Background/girl.jpg')} />
+                        <Text style={styles.headerText}>Bet on Better</Text>
+                        <Text style={styles.contentText}>
+                            Giving hope to the hopeless.
+                            together we can give hope and help a soul for better tomorrow.
+                        </Text>
 
-                    <Text style={styles.textbottom}>
-                        By helping a soul, together we can change the world.
-                    </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.cardContainer3} onPress={() => navigation.navigate('Popup')}>
+                        <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children-2.jpg')} />
+                        <Text style={styles.headerText}>Bet on Better</Text>
+                        <Text style={styles.contentText}>
+                            Giving hope to the hopeless.
+                            together we can give hope and help a soul for better tomorrow.
+                        </Text>
 
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
+            <Text style={styles.textbottom}>
+                By helping a soul, together we can change the world.
+            </Text>
         </SafeAreaView>
     )
 }
@@ -84,7 +77,7 @@ const styles = StyleSheet.create({
         outline: 'none',
         borderRadius: '16px',
     },
-    
+
     scrollcontainer: {
         position: 'absolute',
         width: '375px',
@@ -93,8 +86,8 @@ const styles = StyleSheet.create({
         top: 557,
         backgroundColor: 'rgba(141, 219, 224, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        display: 'flex',
-        flexDirection: 'row',
+
+
     },
     cardContainer: {
         position: 'absolute',
@@ -110,17 +103,18 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '207px',
         height: '119px',
-        left: '110%',
+        left: '230px',
         top: 10,
         backgroundColor: '#ffffff',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '14px'
+        borderRadius: '14px',
+
     },
     cardContainer3: {
         position: 'relative',
         width: '207px',
         height: '119px',
-        left: '116%',
+        left: '245px',
         top: 10,
         backgroundColor: '#ffffff',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
@@ -160,7 +154,7 @@ const styles = StyleSheet.create({
         color: 'rgba(0, 0, 0, 0.74)',
     },
     textbottom: {
-        position: "absolute",
+        position: "relative",
         height: "14px",
         left: "34px",
         top: "300px",
@@ -168,28 +162,28 @@ const styles = StyleSheet.create({
         fontStyle: "normal",
         fontWeight: "bold",
         fontSize: "12px",
-        color: "rgba(94, 206, 253, 1)",
-      },
-      buttonView: {
-          position: "absolute",
-          width: '164px',
-          height: '15px',
-          left: '24px',
-          top: '100px',
-          backgroundColor: 'rgba(94, 206, 253, 1)',
-          borderRadius: '10px',
-      },
-      view: {
-          position:'absolute',
-          width:'29px',
-          height: '15px',
-          left: '75px',
-          fontFamily:'arial',
-          fontStyle:'normal',
-          fontWeight:'normal',
-          fontSize:'13px',
-          lineHeight:'15px',
-          color:'white',
-      },
+        color: "Black",
+    },
+    buttonView: {
+        position: "absolute",
+        width: '164px',
+        height: '15px',
+        left: '24px',
+        top: '100px',
+        backgroundColor: 'rgba(94, 206, 253, 1)',
+        borderRadius: '10px',
+    },
+    view: {
+        position: 'absolute',
+        width: '29px',
+        height: '15px',
+        left: '75px',
+        fontFamily: 'arial',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '13px',
+        lineHeight: '15px',
+        color: 'white',
+    },
 })
 
