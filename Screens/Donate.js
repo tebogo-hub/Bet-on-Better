@@ -4,32 +4,35 @@ import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, S
 
 export default function Donate({ navigation}) {
     return (
-        <View>
+        <View  style={styles.container}>
+            <View style={styles.topContainer}>
+
+            </View>
             <Text style={styles.Heading}>Pick a category</Text>
-            <TouchableOpacity style={styles.Box1}onPress={() => navigation.navigate('')}>
+            <TouchableOpacity style={styles.Box1}onPress={() => navigation.navigate('Discription')}>
                 <Text style={styles.Donate}>Donate for food</Text>
             </TouchableOpacity>
-            <Ionicons name="ios-fast-food-outline" size={40} color="white" style={styles.icon1}/>
-            <TouchableOpacity style={styles.Box2}onPress={() => navigation.navigate('')}>
+            <Ionicons name="ios-fast-food-outline" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon1}/>
+            <TouchableOpacity style={styles.Box2}onPress={() => navigation.navigate('Discription')}>
                 <Text style={styles.Donate2}>Donate for clothes</Text>
             </TouchableOpacity>
-            <Ionicons name="ios-shirt" size={40} color="white" style={styles.icon2}/>
+            <Ionicons name="ios-shirt" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon2}/>
             <TouchableOpacity style={styles.Box3}onPress={() => navigation.navigate('')}>
                 <Text style={styles.Donate3}>Donate for kids</Text>
             </TouchableOpacity>
-            <MaterialCommunityIcons name="human-male-child" size={40} color="white" style={styles.icon3} />
+            <MaterialCommunityIcons name="human-male-child" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon3} />
             <TouchableOpacity style={styles.Box4}onPress={() => navigation.navigate('')}>
                 <Text style={styles.Donate4}>Donate for religion</Text>
             </TouchableOpacity>
-            <FontAwesome5 name="church" size={40} color="white" style={styles.icon4} />
+            <FontAwesome5 name="church" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon4} />
             <TouchableOpacity style={styles.Box5}onPress={() => navigation.navigate('')}>
                 <Text style={styles.Donate5}>Donate for education</Text>
             </TouchableOpacity>
-            <FontAwesome name="book" size={40} color="white" style={styles.icon5} />
+            <FontAwesome name="book" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon5} />
             <TouchableOpacity style={styles.Box6}onPress={() => navigation.navigate('')}>
                 <Text style={styles.Donate6}>Donate for offering</Text>
             </TouchableOpacity>
-            <FontAwesome5 name="money-check-alt" size={40} color="white" style={styles.icon6} />
+            <FontAwesome5 name="money-check-alt" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon6} />
         </View>
     )
 }
@@ -40,9 +43,16 @@ const styles = StyleSheet.create({
         width: '375px',
         height: '812px',
     },
+    topContainer: {
+        position: 'absolute',
+        width: '375px',
+        height: '133px',
+        backgroundColor: 'rgba(184, 129, 207, 1)',
+        boxshadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+    },
     Heading: {
         position: 'absolute',
-        width: '127px',
+        width: '200px',
         height: '21px',
         left: '124px',
         top: '84px',
@@ -51,7 +61,7 @@ const styles = StyleSheet.create({
         fontweight: 'bold',
         fontSize: '18px',
         lineHeight: '21px',
-        color: 'rgba(63, 131, 224, 1)',
+        color: 'white',
     },
     Box1: {
         position: 'absolute',
@@ -59,9 +69,10 @@ const styles = StyleSheet.create({
         height: '75px',
         left: '32px',
         top: '147px',
-        backgroundColor: 'rgba(94, 206, 253, 1)',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         borderRadius: '5px',
+        boxSizing: 'border-box',
+        border:'1px solid rgba(144, 106, 187, 1)'
     },
     Box2: {
         position: 'absolute',
@@ -69,9 +80,10 @@ const styles = StyleSheet.create({
         height: '75px',
         left: '32px',
         top: '247px',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '5px',
-        backgroundColor: 'rgba(63, 131, 224, 1)'
+        boxSizing: 'border-box',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        border:'1px solid rgba(94, 206, 253, 1)'
     },
     Box3: {
         position: 'absolute',
@@ -79,9 +91,10 @@ const styles = StyleSheet.create({
         height: '75px',
         left: '32px',
         top: '347px',
-        backgroundColor: 'rgba(94, 206, 253, 1)',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         borderRadius: '5px',
+        boxSizing: 'border-box',
+        border:'1px solid rgba(144, 106, 187, 1)'
     },
     Box4: {
         position: 'absolute',
@@ -89,9 +102,10 @@ const styles = StyleSheet.create({
         height: '75px',
         left: '32px',
         top: '447px',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '5px',
-        backgroundColor: 'rgba(63, 131, 224, 1)'
+        boxSizing: 'border-box',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        border:'1px solid rgba(94, 206, 253, 1)',
     },
     Box5: {
         position: 'absolute',
@@ -99,9 +113,10 @@ const styles = StyleSheet.create({
         height: '75px',
         left: '32px',
         top: '547px',
-        backgroundColor: 'rgba(94, 206, 253, 1)',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         borderRadius: '5px',
+        boxSizing: 'border-box',
+        border:'1px solid rgba(144, 106, 187, 1)'
     },
     Box6: {
         position: 'absolute',
@@ -109,9 +124,10 @@ const styles = StyleSheet.create({
         height: '75px',
         left: '32px',
         top: '647px',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '5px',
-        backgroundColor: 'rgba(63, 131, 224, 1)'
+        boxSizing: 'border-box',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        border:'1px solid rgba(94, 206, 253, 1)',
     },
     Donate: {
         position: 'absolute',
@@ -124,7 +140,7 @@ const styles = StyleSheet.create({
         fontWeight: '900px',
         fontSize: '18px',
         lineHeight: '21px',
-        color: 'white',
+        color: 'rgba(144, 106, 187, 1)',
     },
     icon1:{
         position: 'absolute',
@@ -141,7 +157,7 @@ const styles = StyleSheet.create({
         fontWeight: '900px',
         fontSize: '18px',
         lineHeight: '21px',
-        color: 'white',
+        color: 'rgba(94, 206, 253, 1)',
         top: '50px',
     },
     icon2:{
@@ -160,7 +176,7 @@ const styles = StyleSheet.create({
         fontWeight: '900px',
         fontSize: '18px',
         lineHeight: '21px',
-        color: 'white'
+        color: 'rgba(144, 106, 187, 1)'
     },
     icon3:{
         position: 'absolute',
@@ -178,7 +194,7 @@ const styles = StyleSheet.create({
        fontWeight: '900px',
        fontSize: '18px',
        lineHeight: '21px',
-       color: 'white',
+       color: 'rgba(94, 206, 253, 1)',
    },
     icon4:{
         position: 'absolute',
@@ -196,7 +212,7 @@ const styles = StyleSheet.create({
         fontWeight: '900px',
         fontSize: '18px',
         lineHeight: '21px',
-        color: 'white',
+        color: 'rgba(144, 106, 187, 1)',
     },
       icon5:{
         position: 'absolute',
@@ -214,12 +230,13 @@ const styles = StyleSheet.create({
         fontWeight: '900px',
         fontSize: '18px',
         lineHeight: '21px',
-        color: 'white',
+        color: 'rgba(94, 206, 253, 1)',
     },
          icon6:{
         position: 'absolute',
         left:'165px',
         top: '655px',
+       
     },
 
 

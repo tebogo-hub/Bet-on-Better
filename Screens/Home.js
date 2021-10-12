@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         height: '141px',
         left: 0,
         top: 557,
-        backgroundColor: 'rgba(141, 219, 224, 1)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         display: 'flex',
         flexDirection: 'row',
