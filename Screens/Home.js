@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
             <View style={styles.topContainer}>
             </View>
             <TextInput
-                placeholder="  Search  "
+                placeholder="Search"
                 style={styles.searchbar}
             />
             <Map />
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         outline: 'none',
         borderRadius: '16px',
+        paddingLeft: '5%',
     },
 
     scrollcontainer: {

@@ -17,5 +17,3 @@ const Alerting = (title, msg) => {
   );
 }
 export default Alerting
-
-    //lutho@gmail.com   1234567
