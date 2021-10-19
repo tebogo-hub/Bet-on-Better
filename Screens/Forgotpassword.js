@@ -7,9 +7,10 @@ function Forgotpassword({navigation}) {
         forgotpassword(email,navigation)
     }
     return (
-        <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
-       
-
+        <View style={styles.container}>
+            <View style={styles.cardContainer}>
+                <Text style={styles.textContainer}></Text>
+            </View>
             <View style={styles.box}>
                 <Text style={styles.Forgot}>Forgot Password</Text>
                 <TextInput
@@ -22,10 +23,9 @@ function Forgotpassword({navigation}) {
                 </TouchableOpacity>
             </View>
 
-        </ImageBackground>
+        </View>
     )
 }
-
 export default Forgotpassword
 const styles = StyleSheet.create({
     container: {
@@ -34,6 +34,25 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
+    },
+    cardContainer: {
+        position: 'relative',
+        width: '375',
+        height: '133px',
+        backgroundColor: 'rgba(184, 129, 207, 1)',
+    },
+    textContainer: {
+        position: 'absolute',
+        width: '127',
+        height: '21px',
+        left: '124px',
+        top: '62px',
+        fontFamily: 'arial',
+        fontStyle: 'normal',
+        fontWeight: '900px',
+        fontSize: '18px',
+        lineHeight: '21px',
+        color: 'white',
     },
     Reset: {
         position: 'absolute',
@@ -53,24 +72,25 @@ const styles = StyleSheet.create({
         width: '315px',
         height: '245px',
         left: '31px',
-        top: '196px',
+        top: '145px',
         backgroundColor: 'rgba(243, 245, 253, 0.5)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius:'16px',
-
+        boxsizing: 'border-box',
+        border: '1px solid rgba(144, 106, 187, 1)'
     },
     Forgot: {
         position: 'absolute',
         width: '205px',
         height: '18px',
         left: '86px',
-        top: '9px',
+        top: '20px',
         fontFamily: 'arial',
         fontStyle: 'normal',
         fontWeight:'bold',
         fontSize: '18px',
         lineHeight: '28px',
-        color: 'white'
+        color: 'rgba(184, 129, 207, 1)'
     },
     TextInput:{
         position: 'absolute',
@@ -82,6 +102,7 @@ const styles = StyleSheet.create({
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderColor:'black',
         borderRadius:'16px',
+        border: '1px solid rgba(184, 129, 207, 1)', 
     },
     button: {
         position: 'absolute',
@@ -89,7 +110,7 @@ const styles = StyleSheet.create({
         height: '30px',
         left:'30%',
         top:'200px',
-        backgroundColor: 'rgba(94, 206, 253, 1)',
+        backgroundColor: 'rgba(184, 129, 207, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius:'15px',
     },

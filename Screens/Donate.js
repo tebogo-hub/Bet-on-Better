@@ -6,7 +6,6 @@ export default function Donate({ navigation}) {
     return (
         <View  style={styles.container}>
             <View style={styles.topContainer}>
-
             </View>
             <Text style={styles.Heading}>Pick a category</Text>
             <TouchableOpacity style={styles.Box1}onPress={() => navigation.navigate('Discription')}>

@@ -232,8 +232,8 @@ const styles = StyleSheet.create({
     },
     touchableOpacity: {
         position: 'absolute',
-        width: '292px',
-        height: '20px',
+        width: '288px',
+        height: '30px',
         left:'44px',
         top: '675px',
         backgroundColor: 'rgba(144, 106, 187, 1)',
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontWeight:'bold',
         fontsize:12,
-        lineHeight:14,
+        lineHeight:25,
         color: 'white'
     }
 

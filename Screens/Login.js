@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
+    
     },
     Logo: {
         marginHorizontal: '1%',
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         fontWeight: '100',
         fontSize: '30px',
         lineHeight: '42px',
-        color: 'rgba(94, 206, 253, 1)',
+        color: 'rgba(184, 129, 207, 1)',
     },
     better: {
         position: 'absolute',
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
         width: '300px',
         height: '59px',
         left: '37px',
-        backgroundColor: 'rgba(63, 131, 224, 1)',
+        backgroundColor: 'rgba(184, 129, 207, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '16px',
         top: '10px',

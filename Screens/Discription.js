@@ -35,6 +35,9 @@ export default function Discription() {
                 </View>
 
             </View>
+            <Text style={styles.textbottom}>
+                By helping a soul, together we can change the world.
+            </Text>
 
         </View>
     )
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
         width: '323px',
         height: '434px',
         left: '21px',
-        top: '100px',
+        top: '150px',
         backgroundColor: 'rgba(255, 255, 255, 1)',
         border: '1px solid rgba(184, 129, 207, 1)',
         boxSizing: 'border-box',
@@ -145,7 +148,19 @@ const styles = StyleSheet.create({
         fontsize: '13px',
         lineHeight: '31px',
         color: 'white',
-    }
+    },
+    textbottom:{
+        position: 'absolute',
+        width:'350px',
+        height: '14px',
+        left: '17px',
+        top: '700px',
+        fontFamily: 'arial',
+        fontstyle: 'normal',
+        fontweight: '900px',
+        fontsize:'14px',
+        color: 'rgba(94, 206, 253, 1)',
+    },
 
 
 
