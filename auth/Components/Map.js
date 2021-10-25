@@ -17,11 +17,12 @@ function Map() {
 
 const styles = StyleSheet.create({
     mapsectionContainer: {
-        width: '100%' ,
-        height: '45%',
-        borderRadius: 16,
-        top: 150,
-        marginHorizontal: '1%',
+        position: 'absolute',
+        width: '375px',
+        height: '378px',
+        borderRadius: 0,
+        top: 0,
+        
     },
 })
 

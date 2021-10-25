@@ -1,5 +1,5 @@
 import React from 'react'
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Entypo, FontAwesome } from '@expo/vector-icons';
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
 
 function Popup({navigation}) {
@@ -15,11 +15,23 @@ function Popup({navigation}) {
                 <ImageBackground style={styles.imageContainer3} source={require('../assets/Background/hope.png')}></ImageBackground>
             </ScrollView>
       
-            <Text style={styles.subheading}>Giving Hope</Text>
+            <Text style={styles.subheading}>Bophelo hope drop in centre</Text>
             <Text style={styles.contentText}>
                 Giving hope to the hopeless and together we can build
                 a better tomorrow and a better future.
+                we care and comfort hopeless people and make a change around the world.
+                love others as you love yourself and help a brother or sister that we can become one.
             </Text>
+
+
+
+            <FontAwesome name="phone" size={22} color="rgba(94, 206, 253, 1)"  style={styles.volumeControl}/>
+             <Text style={styles.oldPhoneNumber}>065 978 1248</Text>
+            <Entypo name="email" size={22} color="rgba(94, 206, 253, 1)" style={styles.Emailicon}/>
+            <Text style={styles.Email}>teejaymellowgrind@gmail.com</Text>
+
+            
+
             <View style={styles.iconContainer}>
                 <View><Ionicons name="md-location-outline" size={24} style={styles.iconlocation} /></View>
                 <View>
@@ -68,14 +80,38 @@ const styles = StyleSheet.create({
     ImageScrollView: {
         position: 'absolute',
         width: '375px',
-        height: '248px',
-        left: 0,
-        backgroundColor: 'rgba(144, 106, 187, 1)',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        height: '240px',
+        backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'row',
         display: 'flex',
         flexDirection: 'row',
+    },
+    Emailicon: {
+        position: 'absolute',
+        left: '22px',
+        top: '345px',
+    },
+    Email: {
+        position: 'absolute',
+        left: '50px',
+        top: '345px',
+        fontSize: '12px',
+        color: 'rgba(184, 129, 207, 1)',
+    },
+    volumeControl: {
+        position: 'absolute',
+        top: '370px',
+        left: '24px',
+    },
+  
+    oldPhoneNumber:{
+        color: 'rgba(184, 129, 207, 1)',
+        position: 'absolute',
+        left: '50px',
+        top: '370px',
+        fontSize: '12px',
+
     },
     imageContainer: {
         position: 'absolute',
@@ -106,26 +142,13 @@ const styles = StyleSheet.create({
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         top: 20,
     },
-    Heading: {
-        position: 'absolute',
-        width: '100px',
-        height: '21px',
-        left: '44px',
-        top: '275px',
-        fontFamily: 'arial',
-        fontweight: 900,
-        fontStyle: 'normal',
-        fontsize: '24px',
-        lineHeight: '21px',
-    },
     subheading: {
         position: 'absolute',
-        height: '15px',
         left: '44px',
-        top: '320px',
+        top: '250px',
         fontFamily: 'arial',
         fontweight: '1000',
-        fontsize: '18px',
+        fontsize: 18,
         lineHeight: '15px',
         color: 'rgba(144, 106, 187, 1)',
     },
@@ -134,11 +157,9 @@ const styles = StyleSheet.create({
         width: '334px',
         height: '28px',
         left: '44px',
-        top: '350px',
-        fontFamily: 'arial',
+        top: '270px',
         fontStyle: 'normal',
-        fontweight: 'bold',
-        fontsize: '12px',
+        fontsize: '9px',
         lineHeight: '14px',
     },
     iconlocation: {

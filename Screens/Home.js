@@ -12,8 +12,7 @@ export default function Home({ navigation }) {
     })
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.topContainer}>
-            </View>
+
             <TextInput
                 placeholder="Search"
                 style={styles.searchbar}
@@ -51,13 +50,35 @@ export default function Home({ navigation }) {
                             Giving hope to the hopeless.
                             together we can give hope and help a soul for better tomorrow.
                         </Text>
-
                     </TouchableOpacity>
+
                 </View>
             </ScrollView>
-            <Text style={styles.textbottom}>
-                By helping a soul, together we can change the world.
-            </Text>
+            <Text style={styles.GiftText}>Gift offering</Text>
+            <View style={styles.GiftContainer}>
+                <View style={styles.Box1}>
+                    <Text style={styles.ContentText1}>
+                        Looking for the perfect git?
+                    </Text>
+                    <TouchableOpacity style={styles.Btn1}>
+                        <Text style={styles.SendText}>Send a gift</Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
+            <Text style={styles.ExploreText}>Explore</Text>
+            <View style={styles.GiftContainer2}>
+                <View style={styles.Box2}>
+                    <Text style={styles.ContentText1}>
+                        Change lives every
+                        month with The Table
+                    </Text>
+                    <TouchableOpacity style={styles.Btn2}>
+                        <Text style={styles.ExploreText2}>Explore</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+
         </SafeAreaView>
     )
 }
@@ -77,11 +98,11 @@ const styles = StyleSheet.create({
     },
     searchbar: {
         position: 'absolute',
-        width: '317px',
-        height: '35px',
-        left: 29,
-        top: 90,
-        backgroundColor: '#E5E5E5',
+        width: '359px',
+        height: '40px',
+        left: 9,
+        top: 69,
+        backgroundColor: 'white',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         outline: 'none',
         borderRadius: '16px',
@@ -90,14 +111,10 @@ const styles = StyleSheet.create({
 
     scrollcontainer: {
         position: 'absolute',
-        width: '375px',
         height: '141px',
         left: 0,
-        top: 557,
+        top: 387,
         backgroundColor: 'rgba(255, 255, 255, 1)',
-        // boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-
-
     },
     cardContainer: {
         position: 'absolute',
@@ -107,7 +124,8 @@ const styles = StyleSheet.create({
         top: 10,
         backgroundColor: '#ffffff',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '14px'
+        borderRadius: '14px',
+        borderColor: 'rgba(94, 206, 253, 1)'
     },
     cardContainer2: {
         position: 'relative',
@@ -118,6 +136,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '14px',
+        borderColor: '1px solid rgba(94, 206, 253, 1)'
 
     },
     cardContainer3: {
@@ -163,16 +182,16 @@ const styles = StyleSheet.create({
         fontSize: '11px',
         color: 'rgba(0, 0, 0, 0.74)',
     },
-    textbottom:{
+    textbottom: {
         position: 'absolute',
-        width:'350px',
+        width: '350px',
         height: '14px',
         left: '17px',
         top: '700px',
         fontFamily: 'arial',
         fontstyle: 'normal',
         fontweight: '900px',
-        fontsize:'14px',
+        fontsize: '14px',
         color: 'rgba(94, 206, 253, 1)',
     },
     buttonView: {
@@ -196,5 +215,119 @@ const styles = StyleSheet.create({
         lineHeight: '15px',
         color: 'white',
     },
+    GiftContainer: {
+        position: 'relative',
+        width: '359px',
+        height: '100px',
+        left: 10,
+        top: 545,
+        backgroundColor: '#ffffff',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '14px',
+    },
+    GiftContainer2: {
+        position: 'relative',
+        width: '359px',
+        height: '100px',
+        left: 10,
+        top: 565,
+        backgroundColor: '#ffffff',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '14px',
+    },
+    GiftText: {
+        position: 'absolute',
+        left: 20,
+        top: 529,
+        fontFamilyt: 'arial',
+        fontWeight: 500,
+        fontSize: 12,
+        lineHeight: 14,
+    },
+    ExploreText: {
+        position: 'absolute',
+        left: 20,
+        top: 650,
+        fontFamilyt: 'arial',
+        fontStyle: 'normal',
+        fontSize: 12,
+        lineHeight: 14,
+        fontweight: 900,
+    },
+    Box1: {
+        position: 'absolute',
+        width: 86,
+        height: 74,
+        left: 15,
+        top: 10,
+        backgroundColor: '#ffffff',
+        border: '1px solid #8881CF',
+        boxSizing: 'border-box',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '16px',
+    },
+    Box2: {
+        position: 'absolute',
+        width: 86,
+        height: 74,
+        left: 15,
+        top: 16,
+        backgroundColor: '#ffffff',
+        border: '1px solid #8881CF',
+        boxSizing: 'border-box',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '16px',
+    },
+    Btn1: {
+        position: 'absolute',
+        width: 235,
+        height: 35,
+        left: 100,
+        top: 37,
+        backgroundColor: '#B881CF',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '16px',
+    },
+    SendText: {
+        position: 'absolute',
+        left: 80,
+        top: 7,
+        color: '#FFFFFF',
+    },
+    Btn2: {
+        position: 'absolute',
+        width: 235,
+        height: 35,
+        left: 100,
+        top: 37,
+        backgroundColor: '#B881CF',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '16px',
+    },
+    ExploreText2: {
+        position: 'absolute',
+        position: 'absolute',
+        left: 80,
+        top: 7,
+        color: '#FFFFFF',
+    },
+    ContentText1: {
+        position: 'absolute',
+        width: 200,
+        left: 110,
+        top: 0,
+        fontFamily: 'arial',
+        fontSize: 'normal',
+        fontWeight: '500px',
+        fontsize: 5,
+        lineHeight: 15,
+        color: 'rgba(0,0,0,0.63)',
+
+
+    }
+
+
+
+
 })
 

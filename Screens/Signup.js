@@ -30,7 +30,7 @@ export default function Signup({ navigation }) {
   return (
     <ImageBackground
       style={styles.container}
-      source={require("../assets/Background/girl.jpg")}
+      
     >
       <View style={styles.Logo}>
         <Text style={styles.Bet}>Bet</Text>
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   Bet: {
     position: "absolute",
-    color: "white",
+    color: "rgba(94, 206, 253, 1)",
     height: "42px",
     left: "42px",
     top: "97px",
@@ -124,11 +124,11 @@ const styles = StyleSheet.create({
     fontWeight: "100",
     fontSize: "30px",
     lineHeight: "42px",
-    color: "rgba(184, 129, 207, 1)",
+    color: "rgba(144, 106, 187, 1)",
   },
   better: {
     position: "absolute",
-    color: "white",
+    color: "rgba(144, 106, 187, 1)",
     height: "42px",
     left: "8%",
     top: "125px",
@@ -150,8 +150,8 @@ const styles = StyleSheet.create({
     left: "37px",
     top: "100px",
     padding: "5px",
-    borderColor: "rgba(229, 229, 229, 1);",
-    height: "35px",
+    borderColor: "rgba(0, 0, 0, 0.25)",
+    height: "40px",
     color: "white",
   },
   TextInput2: {
@@ -162,19 +162,19 @@ const styles = StyleSheet.create({
     top: "150px",
     outline: "none",
     padding: "5px",
-    height: "35px",
-    borderColor: "rgba(229, 229, 229, 1);",
+    height: "40px",
+    borderColor: "rgba(0, 0, 0, 0.25)",
     color: "white",
   },
   TextInput3: {
     borderWidth: "1px",
     position: "absolute",
     width: "300px",
-    height: "35px",
+    height: "40px",
     top: "200px",
     outline: "none",
     padding: "5px",
-    borderColor: "rgba(229, 229, 229, 1);",
+    borderColor: "rgba(0, 0, 0, 0.25)",
     color: "white",
     left: "37px",
   },
@@ -182,11 +182,11 @@ const styles = StyleSheet.create({
     borderWidth: "1px",
     position: "absolute",
     width: "300px",
-    height: "35px",
+    height: "40px",
     top: "250px",
     outline: "none",
     padding: "5px",
-    borderColor: "rgba(229, 229, 229, 1);",
+    borderColor: "rgba(0, 0, 0, 0.25)",
     color: "white",
     left: "37px",
   },

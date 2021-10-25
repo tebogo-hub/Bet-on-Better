@@ -20,7 +20,7 @@ export default function Login({ navigation}) {
    }
    
     return (
-        <ImageBackground style={styles.container} source={require('../assets/Background/girl.jpg')}>
+        <ImageBackground style={styles.container}>
             <View style={styles.Logo}>
                 <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
             </View>
@@ -31,7 +31,7 @@ export default function Login({ navigation}) {
             {/* place holders for text inputs*/}
             <View style={styles.inputContainer}>
                 <TextInput
-                    placeholder="Email"
+                    placeholder="Username"
                     style={styles.TextInput}
                     onChangeText={(email) => setEmail(email)}
                 />
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     },
     Bet: {
         position: 'absolute',
-        color: 'white',
+        color: 'rgba(94, 206, 253, 1)',
         height: '42px',
         left: '42px',
         top: '97px',
@@ -123,8 +123,8 @@ const styles = StyleSheet.create({
     },
     better: {
         position: 'absolute',
-        color: 'white',
-        height: '42px',
+        color: 'rgba(184, 129, 207, 1)',
+        height: '50px',
         left: '8%',
         top: '125px',
         fontFamily: 'arial black',
@@ -145,10 +145,12 @@ const styles = StyleSheet.create({
         left: '37px',
         top: '100px',
         padding: '5px',
-        height: '35px',
-        color: 'white',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderColor:'rgba(229, 229, 229, 1);',
+        height: '40px',
+        color: 'black',
+        fontStyle: 'normal',
+        fontWeight: '900px',
+        // boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderColor:'rgba(0, 0, 0, 0.25)',
         
     },
     TextInput2: {
@@ -159,10 +161,12 @@ const styles = StyleSheet.create({
         top: '150px',
         outline: 'none',
         padding: '5px',
-        height: '35px',
-        color: 'white',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderColor:'rgba(229, 229, 229, 1);',
+        height: '40px',
+        color: 'black',
+        fontStyle: 'normal',
+        fontWeight: '900px',
+        // boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderColor:'rgba(0, 0, 0, 0.25)',
     },
     touchableOpacity: {
         position: 'absolute',
@@ -204,7 +208,7 @@ const styles = StyleSheet.create({
         fontweight: 'normal',
         fontSize: '14px',
         lineHeight: '16px',
-        color: 'white',
+        color: 'black',
     },
     textsignup: {
         position: 'absolute',
@@ -213,10 +217,10 @@ const styles = StyleSheet.create({
         left: '250px',
         fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight: '900px',
+        fontWeight: '1000px',
         fontSize: '14px',
         lineHeight: '16px',
-        color: 'rgba(63, 131, 224, 1)',
+        color: 'rgba(54, 124, 255, 1)',
     },
     Facebook: {
         position: 'absolute',
@@ -295,13 +299,14 @@ const styles = StyleSheet.create({
     forgot: {
         position: 'relative',
         textAlign:'center',
-        color: 'white',
+        color: 'black',
         fontFamily: 'arial',
         fontStyle: 'normal',
         fontWeight: 'bolder',
         fontSize: '12px',
         bottom: '6%',
         paddingLeft: '49%',
+        lineHeight: '15px',
     },
 })
 

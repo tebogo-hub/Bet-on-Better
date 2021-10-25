@@ -8,9 +8,13 @@ function Forgotpassword({navigation}) {
     }
     return (
         <View style={styles.container}>
-            <View style={styles.cardContainer}>
-                <Text style={styles.textContainer}></Text>
+             <View style={styles.Logo}>
+                <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
             </View>
+            <View style={styles.logo2}>
+                <Text style={styles.better}>Better</Text>
+            </View>
+           
             <View style={styles.box}>
                 <Text style={styles.Forgot}>Forgot Password</Text>
                 <TextInput
@@ -35,12 +39,52 @@ const styles = StyleSheet.create({
         width: '375px',
         height: '812px',
     },
-    cardContainer: {
-        position: 'relative',
-        width: '375',
-        height: '133px',
-        backgroundColor: 'rgba(184, 129, 207, 1)',
+    Logo: {
+        marginHorizontal: '1%',
+        display: 'flex',
+        flexDirection: 'row',
     },
+    logo2: {
+        marginHorizontal: '5%',
+    },
+    Bet: {
+        position: 'absolute',
+        color: 'rgba(94, 206, 253, 1)',
+        height: '42px',
+        left: '42px',
+        top: '97px',
+        fontFamily: 'arial black',
+        fontStyle: 'normal',
+        fontWeight: '100',
+        fontSize: '30px',
+        lineHeight: '42px',   
+    },
+    on: {
+        position: 'absolute',
+        // width: '41px',
+        height: '42px',
+        left: '100px',
+        top: '97px',
+        fontFamily: 'arial black',
+        fontStyle: 'normal',
+        fontWeight: '100',
+        fontSize: '30px',
+        lineHeight: '42px',
+        color: 'rgba(184, 129, 207, 1)',
+    },
+    better: {
+        position: 'absolute',
+        color: 'rgba(184, 129, 207, 1)',
+        height: '50px',
+        left: '8%',
+        top: '125px',
+        fontFamily: 'arial black',
+        fontStyle: 'normal',
+        fontWeight: '100',
+        fontSize: '30px',
+        lineHeight: '42px',
+    },
+ 
     textContainer: {
         position: 'absolute',
         width: '127',
@@ -51,7 +95,7 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontWeight: '900px',
         fontSize: '18px',
-        lineHeight: '21px',
+        lineHeight: '50px',
         color: 'white',
     },
     Reset: {
@@ -72,12 +116,11 @@ const styles = StyleSheet.create({
         width: '315px',
         height: '245px',
         left: '31px',
-        top: '145px',
+        top: '200px',
         backgroundColor: 'rgba(243, 245, 253, 0.5)',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius:'16px',
+        borderRadius:'0px',
         boxsizing: 'border-box',
-        border: '1px solid rgba(144, 106, 187, 1)'
+        border: '1px solid rgba(0, 0, 0, 0.25)'
     },
     Forgot: {
         position: 'absolute',
@@ -85,12 +128,12 @@ const styles = StyleSheet.create({
         height: '18px',
         left: '86px',
         top: '20px',
-        fontFamily: 'arial',
+
         fontStyle: 'normal',
-        fontWeight:'bold',
+        fontWeight:'900px',
         fontSize: '18px',
         lineHeight: '28px',
-        color: 'rgba(184, 129, 207, 1)'
+        color: 'rgba(0, 0, 0, 0.63)'
     },
     TextInput:{
         position: 'absolute',
@@ -99,10 +142,9 @@ const styles = StyleSheet.create({
         left: '25px',
         top: '100px',
         backgroundColor: 'white', 
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderColor:'black',
-        borderRadius:'16px',
-        border: '1px solid rgba(184, 129, 207, 1)', 
+        borderRadius:'0px',
+        border: '1px solid rgba(0, 0, 0, 0.25)', 
     },
     button: {
         position: 'absolute',
