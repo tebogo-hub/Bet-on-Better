@@ -8,27 +8,27 @@ export default function Donate({ navigation}) {
             <View style={styles.topContainer}>
             </View>
             <Text style={styles.Heading}>Pick a category</Text>
-            <TouchableOpacity style={styles.Box1}onPress={() => navigation.navigate('Discription')}>
+            <TouchableOpacity style={styles.Box1}onPress={() => navigation.navigate('Description')}>
                 <Text style={styles.Donate}>Donate for food</Text>
             </TouchableOpacity>
             <Ionicons name="ios-fast-food-outline" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon1}/>
-            <TouchableOpacity style={styles.Box2}onPress={() => navigation.navigate('Discription')}>
+            <TouchableOpacity style={styles.Box2}onPress={() => navigation.navigate('Description')}>
                 <Text style={styles.Donate2}>Donate for clothes</Text>
             </TouchableOpacity>
             <Ionicons name="ios-shirt" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon2}/>
-            <TouchableOpacity style={styles.Box3}onPress={() => navigation.navigate('')}>
+            <TouchableOpacity style={styles.Box3}onPress={() => navigation.navigate('Description')}>
                 <Text style={styles.Donate3}>Donate for kids</Text>
             </TouchableOpacity>
             <MaterialCommunityIcons name="human-male-child" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon3} />
-            <TouchableOpacity style={styles.Box4}onPress={() => navigation.navigate('')}>
+            <TouchableOpacity style={styles.Box4}onPress={() => navigation.navigate('Description')}>
                 <Text style={styles.Donate4}>Donate for religion</Text>
             </TouchableOpacity>
             <FontAwesome5 name="church" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon4} />
-            <TouchableOpacity style={styles.Box5}onPress={() => navigation.navigate('')}>
+            <TouchableOpacity style={styles.Box5}onPress={() => navigation.navigate('Description')}>
                 <Text style={styles.Donate5}>Donate for education</Text>
             </TouchableOpacity>
             <FontAwesome name="book" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon5} />
-            <TouchableOpacity style={styles.Box6}onPress={() => navigation.navigate('')}>
+            <TouchableOpacity style={styles.Box6}onPress={() => navigation.navigate('Description')}>
                 <Text style={styles.Donate6}>Donate for offering</Text>
             </TouchableOpacity>
             <FontAwesome5 name="money-check-alt" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon6} />

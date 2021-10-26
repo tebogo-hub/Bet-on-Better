@@ -253,11 +253,11 @@ const styles = StyleSheet.create({
     },
     touchableOpacity: {
         position: 'absolute',
-        width: '288px',
-        height: '30px',
+        width: 282,
+        height: 40,
         left:'44px',
         top: '675px',
-        backgroundColor: 'rgba(144, 106, 187, 1)',
+        backgroundColor: 'rgba(184, 129, 207, 1)',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius:'16px',
     },
@@ -266,13 +266,14 @@ const styles = StyleSheet.create({
         width: '100px',
         height: '14px',
         left: '125px',
-        top: '1.5px',
+        top: '9px',
         fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight:'bold',
+        fontWeight:'normal',
         fontsize:12,
         lineHeight:25,
         color: 'white'
-    }
+    },
+    
 
 })

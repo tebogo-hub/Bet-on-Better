@@ -1,6 +1,9 @@
 import React from 'react'
+import { Octicons, Fontisto } from '@expo/vector-icons';
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
 import Map from '../auth/Components/Map';
+import bootstrap from './node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 export default function Home({ navigation }) {
     let lat;
     let lon;
@@ -20,7 +23,7 @@ export default function Home({ navigation }) {
             <Map />
             <ScrollView horizontal={true}
                 showsHorizontalScrollIndicator={false}
-                pagingEnabled={true}
+                pagingEnabled={false}
                 style={styles.scrollcontainer}
             >
                 <View style={{ flexDirection: 'row' }}>
@@ -57,11 +60,12 @@ export default function Home({ navigation }) {
             <Text style={styles.GiftText}>Gift offering</Text>
             <View style={styles.GiftContainer}>
                 <View style={styles.Box1}>
+                <Octicons name="gift" size={50} color="rgba(184, 129, 207, 1)" style={styles.icon}/>
                     <Text style={styles.ContentText1}>
                         Looking for the perfect git?
                     </Text>
                     <TouchableOpacity style={styles.Btn1}>
-                        <Text style={styles.SendText}>Send a gift</Text>
+                        <Text style={styles.SendText}  onPress={() => navigation.navigate('Gift')}>Send a gift</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -69,11 +73,12 @@ export default function Home({ navigation }) {
             <Text style={styles.ExploreText}>Explore</Text>
             <View style={styles.GiftContainer2}>
                 <View style={styles.Box2}>
+                <Fontisto name="world" size={50} color="rgba(94, 206, 253, 1)" style={styles.icon}/>
                     <Text style={styles.ContentText1}>
                         Change lives every
                         month with The Table
                     </Text>
-                    <TouchableOpacity style={styles.Btn2}>
+                    <TouchableOpacity style={styles.Btn2} onPress={() => navigation.navigate('Explore')}>
                         <Text style={styles.ExploreText2}>Explore</Text>
                     </TouchableOpacity>
                 </View>
@@ -88,6 +93,11 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
+    },
+    icon:{
+        position: 'absolute',
+        left: 20,
+        top: 10,
     },
     topContainer: {
         position: 'absolute',
@@ -316,18 +326,12 @@ const styles = StyleSheet.create({
         width: 200,
         left: 110,
         top: 0,
-        fontFamily: 'arial',
+        fontFamily: ' sans-serif',
         fontSize: 'normal',
         fontWeight: '500px',
         fontsize: 5,
         lineHeight: 15,
         color: 'rgba(0,0,0,0.63)',
-
-
-    }
-
-
-
-
+    },
 })
 
