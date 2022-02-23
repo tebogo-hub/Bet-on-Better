@@ -1,37 +1,148 @@
 import React from 'react'
-import { Ionicons, MaterialCommunityIcons,  FontAwesome5, FontAwesome } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome5, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
 
-export default function Donate({ navigation}) {
+export default function Donate({ navigation }) {
     return (
-        <View  style={styles.container}>
-            <View style={styles.topContainer}>
+        <View style={styles.container}>
+            <Text style={{ textAlign: 'center', fontSize: '18px', fontWeight: '500', marginTop: '25px', color: '#ffac2c' }}>Pick a category</Text>
+            <TouchableOpacity style={{
+                position: 'relative',
+                width: "341px",
+                height: "120px",
+                left: "15px",
+                boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                borderRadius: '14px',
+                boxSizing: "border-box",
+                top: "100px",
+                backgroundColor: 'white',
+                color: 'white'
+            }} onPress={() => navigation.navigate('ContactForm')}>
+                <View style={{
+                    position: 'absolute',
+                    width: '77px',
+                    height: '67px',
+                    left: '10px',
+                    top: '25px',
+                    backgroundColor: '#ffac2c',
+                    boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                    borderRadius: '5px'
+                }}>
+                    <Ionicons name="ios-fast-food-sharp" size={24} color="white" style={{ marginTop: "10px", marginLeft: "10px" }} />
+                </View>
+                <Text style={{ marginTop: '25px', marginLeft: '10px', textAlign: 'center', fontSize: '12px', fontWeight: '500', color: 'rgba(184, 129, 207, 1)' }}>Donat Food</Text>
+                <Text style={{ fontSize: '8px', marginLeft: '30%', fontWeight: '500', }}>
+                    Being a citizen, you must donate food to charity and support the cause.
+                    Instead of throwing leftover food items in the garbage,
+                    you can donate those to someone who is badly hungry. Apart from leftovers,
+                    you can also donate different varieties of non-perishable food items to charity.
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{
+                position: 'relative',
+                width: "341px",
+                height: "120px",
+                left: "15px",
+                boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                borderRadius: '14px',
+                boxSizing: "border-box",
+                top: "115px",
+                backgroundColor: 'white',
+                color: 'white'
+            }} onPress={() => navigation.navigate('ContactForm')}>
+                <View style={{
+                    position: 'absolute',
+                    width: '77px',
+                    height: '67px',
+                    left: '10px',
+                    top: '25px',
+                    backgroundColor: '#ffac2c',
+                    boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                    borderRadius: '5px'
+                }}>
+                    <MaterialCommunityIcons name="bookshelf" size={30} color="white" style={{ marginTop: "10px", marginLeft: "10px" }} />
+                </View>
+                <Text style={{ marginTop: '25px', marginLeft: '10px', textAlign: 'center', fontSize: '12px', fontWeight: '500', color: 'rgba(184, 129, 207, 1)' }}>Donat Books</Text>
+                <Text style={{ fontSize: '8px', marginLeft: '30%', fontWeight: '500', }}>
+                    Being a citizen, you must donate food to charity and support the cause.
+                    Instead of throwing leftover food items in the garbage,
+                    you can donate those to someone who is badly hungry. Apart from leftovers,
+                    you can also donate different varieties of non-perishable food items to charity.
+                </Text>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity style={{
+                position: 'relative',
+                width: "341px",
+                height: "120px",
+                left: "15px",
+                boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                borderRadius: '14px',
+                boxSizing: "border-box",
+                top: "130px",
+                backgroundColor: 'white',
+                color: 'white'
+            }} onPress={() => navigation.navigate('ContactForm')}>
+                <View style={{
+                    position: 'absolute',
+                    width: '77px',
+                    height: '67px',
+                    left: '10px',
+                    top: '25px',
+                    backgroundColor: '#ffac2c',
+                    boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                    borderRadius: '5px'
+                }}>
+                    <Ionicons name="shirt" size={30} color="white" style={{ marginTop: "10px", marginLeft: "10px" }} />
+                </View>
+                <Text style={{ marginTop: '25px', marginLeft: '10px', textAlign: 'center', fontSize: '12px', fontWeight: '500', color: 'rgba(184, 129, 207, 1)' }}>Donat Clothes</Text>
+                <Text style={{ fontSize: '8px', marginLeft: '30%', fontWeight: '500', }}>
+                    Being a citizen, you must donate food to charity and support the cause.
+                    Instead of throwing leftover food items in the garbage,
+                    you can donate those to someone who is badly hungry. Apart from leftovers,
+                    you can also donate different varieties of non-perishable food items to charity.
+                </Text>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity style={{
+                position: 'relative',
+                width: "341px",
+                height: "120px",
+                left: "15px",
+                boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                borderRadius: '14px',
+                boxSizing: "border-box",
+                top: "145px",
+                backgroundColor: 'white',
+                color: 'white'
+            }} onPress={() => navigation.navigate('ContactForm')}>
+                <View style={{
+                    position: 'absolute',
+                    width: '77px',
+                    height: '67px',
+                    left: '10px',
+                    top: '25px',
+                    backgroundColor: '#ffac2c',
+                    boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                    borderRadius: '5px'
+                }}>
+                    <MaterialIcons name="toys" size={30} color="white" style={{ marginTop: "10px", marginLeft: "10px" }} />
+                </View>
+                <Text style={{ marginTop: '25px', marginLeft: '10px', textAlign: 'center', fontSize: '12px', fontWeight: '500', color: 'rgba(184, 129, 207, 1)' }}>Donat Toys</Text>
+                <Text style={{ fontSize: '8px', marginLeft: '30%', fontWeight: '500', }}>
+                    Being a citizen, you must donate food to charity and support the cause.
+                    Instead of throwing leftover food items in the garbage,
+                    you can donate those to someone who is badly hungry. Apart from leftovers,
+                    you can also donate different varieties of non-perishable food items to charity.
+                </Text>
+            </TouchableOpacity>
+            <View style={{ position: 'fixed', backgroundColor: 'rgba(15, 16, 17, 0.37)', width: '375px', height: '55px', left: '0px', top: '95%', }}>
+                <TouchableOpacity style={{ marginTop: '5px', marginLeft: '10px', backgroundColor: '#ffac2c', boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)', marginRight: '10px', borderRadius: '14px', }} onPress={() => navigation.navigate('Home')}>
+                    <Text style={{ color: 'white', textAlign: 'center' }}>Back</Text>
+                </TouchableOpacity>
             </View>
-            <Text style={styles.Heading}>Pick a category</Text>
-            <TouchableOpacity style={styles.Box1}onPress={() => navigation.navigate('Description')}>
-                <Text style={styles.Donate}>Donate for food</Text>
-            </TouchableOpacity>
-            <Ionicons name="ios-fast-food-outline" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon1}/>
-            <TouchableOpacity style={styles.Box2}onPress={() => navigation.navigate('Description')}>
-                <Text style={styles.Donate2}>Donate for clothes</Text>
-            </TouchableOpacity>
-            <Ionicons name="ios-shirt" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon2}/>
-            <TouchableOpacity style={styles.Box3}onPress={() => navigation.navigate('Description')}>
-                <Text style={styles.Donate3}>Donate for kids</Text>
-            </TouchableOpacity>
-            <MaterialCommunityIcons name="human-male-child" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon3} />
-            <TouchableOpacity style={styles.Box4}onPress={() => navigation.navigate('Description')}>
-                <Text style={styles.Donate4}>Donate for religion</Text>
-            </TouchableOpacity>
-            <FontAwesome5 name="church" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon4} />
-            <TouchableOpacity style={styles.Box5}onPress={() => navigation.navigate('Description')}>
-                <Text style={styles.Donate5}>Donate for education</Text>
-            </TouchableOpacity>
-            <FontAwesome name="book" size={40} color="rgba(144, 106, 187, 1)" style={styles.icon5} />
-            <TouchableOpacity style={styles.Box6}onPress={() => navigation.navigate('Description')}>
-                <Text style={styles.Donate6}>Donate for offering</Text>
-            </TouchableOpacity>
-            <FontAwesome5 name="money-check-alt" size={40} color="rgba(94, 206, 253, 1)" style={styles.icon6} />
         </View>
     )
 }
@@ -41,210 +152,8 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
+        backgroundColor: 'white',
     },
-    topContainer: {
-        position: 'absolute',
-        width: '375px',
-        height: '133px',
-        backgroundColor: 'rgba(184, 129, 207, 1)',
-        boxshadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-    },
-    Heading: {
-        position: 'absolute',
-        width: '200px',
-        height: '21px',
-        left: '124px',
-        top: '84px',
-        fontFamily: 'arial',
-        fontSize: 'normal',
-        fontweight: 'bold',
-        fontSize: '18px',
-        lineHeight: '21px',
-        color: 'white',
-    },
-    Box1: {
-        position: 'absolute',
-        width: '311px',
-        height: '75px',
-        left: '32px',
-        top: '147px',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        border:'1px solid rgba(144, 106, 187, 1)'
-    },
-    Box2: {
-        position: 'absolute',
-        width: '311px',
-        height: '75px',
-        left: '32px',
-        top: '247px',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        border:'1px solid rgba(94, 206, 253, 1)'
-    },
-    Box3: {
-        position: 'absolute',
-        width: '311px',
-        height: '75px',
-        left: '32px',
-        top: '347px',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        border:'1px solid rgba(144, 106, 187, 1)'
-    },
-    Box4: {
-        position: 'absolute',
-        width: '311px',
-        height: '75px',
-        left: '32px',
-        top: '447px',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        border:'1px solid rgba(94, 206, 253, 1)',
-    },
-    Box5: {
-        position: 'absolute',
-        width: '311px',
-        height: '75px',
-        left: '32px',
-        top: '547px',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        border:'1px solid rgba(144, 106, 187, 1)'
-    },
-    Box6: {
-        position: 'absolute',
-        width: '311px',
-        height: '75px',
-        left: '32px',
-        top: '647px',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        border:'1px solid rgba(94, 206, 253, 1)',
-    },
-    Donate: {
-        position: 'absolute',
-        width: '127px',
-        height: '21px',
-        left: '85px',
-        top: '50px',
-        fontFamily: 'arial',
-        fontStyle: 'normal',
-        fontWeight: '900px',
-        fontSize: '18px',
-        lineHeight: '21px',
-        color: 'rgba(144, 106, 187, 1)',
-    },
-    icon1:{
-        position: 'absolute',
-        left:'165px',
-        top: '150px',
-    },
-    Donate2: {
-        position: 'absolute',
-        width: '155px',
-        height: '21px',
-        left: '80px',
-        fontFamily: 'arial',
-        fontStyle: 'normal',
-        fontWeight: '900px',
-        fontSize: '18px',
-        lineHeight: '21px',
-        color: 'rgba(94, 206, 253, 1)',
-        top: '50px',
-    },
-    icon2:{
-        position: 'absolute',
-        left:'165px',
-        top: '255px',
-    },
-    Donate3: {
-        position: 'absolute',
-        width: '129px',
-        height: '21px',
-        left: '80px',
-        top: '50px',
-        fontFamily: 'arial',
-        fontStyle: 'normal',
-        fontWeight: '900px',
-        fontSize: '18px',
-        lineHeight: '21px',
-        color: 'rgba(144, 106, 187, 1)'
-    },
-    icon3:{
-        position: 'absolute',
-        left:'165px',
-        top: '350px',
-    },
-   Donate4: {
-       position: 'absolute',
-       width: '152px',
-       height: '21px',
-       left: '80px',
-       top: '50px',
-       fontFamily: 'arial',
-       fontStyle: 'normal',
-       fontWeight: '900px',
-       fontSize: '18px',
-       lineHeight: '21px',
-       color: 'rgba(94, 206, 253, 1)',
-   },
-    icon4:{
-        position: 'absolute',
-        left:'165px',
-        top: '450px',
-    },
-    Donate5: {
-        position: 'absolute',
-        width: '171px',
-        height: '21px',
-        left: '80px',
-        top: '50px',
-        fontFamily: 'arial',
-        fontStyle: 'normal',
-        fontWeight: '900px',
-        fontSize: '18px',
-        lineHeight: '21px',
-        color: 'rgba(144, 106, 187, 1)',
-    },
-      icon5:{
-        position: 'absolute',
-        left:'165px',
-        top: '550px',
-    },
-    Donate6:{
-        position: 'absolute',
-        width: '155px',
-        height: '21px',
-        left: '80px',
-        top: '50px',
-        fontFamily: 'arial',
-        fontStyle: 'normal',
-        fontWeight: '900px',
-        fontSize: '18px',
-        lineHeight: '21px',
-        color: 'rgba(94, 206, 253, 1)',
-    },
-         icon6:{
-        position: 'absolute',
-        left:'165px',
-        top: '655px',
-       
-    },
-
-
-
-
-
-
-
-
 
 
 })

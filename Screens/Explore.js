@@ -1,25 +1,61 @@
-import React from 'react'
-import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView, Linking } from 'react-native';
+import { firebase } from '../config/firebase';
 
 
-export default function Explore({ Navigaton }) {
+export default function Explore({ navigation}) {
+
+    const TriggerMail = () => {
+        Linking.openURL('mailto:teejaymellowgrind@gmail.com',)
+    }
+    const [campList, setCampList] = useState([]);
+
+    useEffect(() => {
+        firebase.firestore().collection('Campaign').get().then((querySnapshot) => {
+            const data = querySnapshot.docs.map((doc) => ({
+
+                id: doc.id,
+                ...doc.data(),
+            }));
+            console.log(data)
+            setCampList(data)
+        });
+
+    }, [])
+
+
+
+
     return (
-        <View style={styles.container}>
-            <ImageBackground style={styles.imageBackground} source={require('../assets/Background/backChild.jpg')} />
-            <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
-            <Text style={styles.better}>Better</Text>
-            <Text style={styles.contentText}>
-                Help affected families by sharing whatever
-                you think its not of use.
-            </Text>
-            <Text style={styles.contentText2}>Our Impact</Text>
-            <View style={styles.worldmapConatiner}>
-                <ImageBackground style={styles.worldMap} source={require('../assets/Background/world-map.svg')} />
-            </View>
-            <Text style={styles.supportText}>500 164 Supporters</Text>
-            <View style={styles.line}></View>
 
-        </View>
+        <SafeAreaView style={styles.container}>
+            <Text style={{ textAlign: 'center', fontSize: '18px', fontWeight: 'bold', marginTop: '10px', color: '#ffac2c' }}>Campaign</Text>
+
+            {campList.map((data) => (
+                <View style={styles.Card1}>
+                    <Text style={{ marginTop: '5px', marginLeft: '10px', fontSize: '12px', fontWeight: '500', color: 'rgba(184, 129, 207, 1)' }}>{data.campName}</Text>
+
+                    <Text style={{ marginTop: '10px', marginLeft: '10px', fontSize: '9px', fontWeight: '500' }}>
+                        {data.campDescription}
+                    </Text>
+                    <Text style={{ marginTop: '10px', marginLeft: '10px', fontSize: 'normal', fontWeight: '500' }}>Donating to Foundation for kids to receive</Text>
+                    <Text style={{ marginTop: '5px', marginLeft: '10px', fontSize: '12px', fontWeight: 'normal' }}>{data.campType}</Text>
+
+                    <View style={{ display: 'flex', flexDirection: 'column', }}>
+                        <Text style={{ marginTop: '5px', marginLeft: '10px', fontSize: '12px', fontWeight: 'normal' }}>Email to : {data.campEmail}</Text>
+                        <Text style={{ marginTop: '5px', marginLeft: '10px', fontSize: '12px', fontWeight: 'normal' }}>Conatct : {data.campPhone}</Text>
+                    </View>
+
+                    <TouchableOpacity style={{ marginTop: '10px', marginLeft: '10px', fontSize: '12px', fontWeight: 'normal', backgroundColor: '#ffac2c', marginRight: '10px', borderRadius: '5px', height: '21px' }}><Text style={{ color: 'white', textAlign: 'center', }} onPress={TriggerMail}>Email</Text></TouchableOpacity>
+                </View >
+
+            ))}
+            <View style={{ position: 'fixed', backgroundColor: 'rgba(15, 16, 17, 0.37)', width: '375px', height: '55px', left: '0px', top: '95%', }}>
+                <TouchableOpacity style={{ marginTop: '5px', marginLeft: '10px', backgroundColor: '#ffac2c', boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)' ,marginRight:'10px',borderRadius: '14px', }} onPress={() => navigation.navigate('Home')}>
+                    <Text style={{ color: 'white', textAlign:'center' }}>Back</Text>
+                </TouchableOpacity>
+            </View>
+        </SafeAreaView>
     )
 }
 
@@ -29,105 +65,29 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
-    },
-    imageBackground: {
-        position: 'absolute',
-        width: 375,
-        height: 417,
-        left: 0,
-        top: 0,
-    },
-    Bet: {
-        position: 'absolute',
-        color: 'rgba(94, 206, 253, 1)',
-        height: '16px',
-        left: 12,
-        top: '331px',
-        fontFamily: 'arial black',
-        fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '14px',
-        lineHeight: '42px',
-    },
-    on: {
-        position: 'absolute',
-        // width: '41px',
-        height: '16px',
-        left: '40px',
-        top: '331px',
-        fontFamily: 'arial black',
-        fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '14px',
-        lineHeight: '42px',
-        color: 'rgba(184, 129, 207, 1)',
-    },
-    better: {
-        position: 'absolute',
-        color: 'rgba(184, 129, 207, 1)',
-        height: '16px',
-        left: 12,
-        top: '344px',
-        fontFamily: 'arial black',
-        fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '14px',
-        lineHeight: '42px',
-    },
-    contentText: {
-        position: 'absolute',
-        left: 12,
-        top: 375,
-        fontFamily: 'arial',
-        fontStyle: 'normal',
-        fontWeight: '900px',
-        fontSize: 14,
-        lineHeight: 16,
-        color: 'white',
-    },
-    contentText2: {
-        position: 'absolute',
-        left: 14,
-        top: 415,
-        fontFamily: 'arial black',
-        fontStyle: 'normal',
-        fontWeight: 900,
-        fontSize: '12px',
-        lineHeight: '42px',
-        color: 'black',
-    },
-    worldMap: {
-        position: 'absolute',
-        width: 348,
-        height: 147,
-        left: 13,
-        top: 450,
-        borderRadius: 10,
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         backgroundColor: 'white'
     },
-    supportText: {
-        position: 'absolute',
-        left: 14,
-        top:610,
-        fontFamily: 'arial black',
-        fontStyle: 'normal',
-        fontWeight: 900,
-        fontSize: '14px',
-        lineHeight: '20px',
-        color: 'black',
+    Card1: {
+        position: 'relative',
+        width: "341px",
+        height: "200px",
+        left: "15px",
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+        borderRadius: '14px',
+        boxSizing: "border-box",
+        top: "45px",
     },
-    line:{
-        position: 'absolute',
-        width:346.05,
-        height:0,
-        left:14,
-        top:637,
-        border:'2px solid rgba(184, 129, 207, 1)',
-        transform:'rotate(-180deg)',
-    },
+    Card2: {
+        position: 'relative',
+        width: "341px",
+        height: "200px",
+        left: "15px",
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '14px',
+        boxSizing: "border-box",
+        top: "65px",
 
-
+    }
 
 
 })

@@ -1,24 +1,35 @@
 
-import React, {useState} from 'react'
-import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground } from 'react-native'
+import React, { useState } from 'react'
+import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, } from 'react-native'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import FirebaseLogin from '../auth/FirebaseLogin';
 import { continueWithFacebook } from '../auth/continueWithFacebook';
 
+export default function Login({ navigation }) {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-export default function Login({ navigation}) {
-   const [email, setEmail] = useState('')
-   const [password, setPassword] = useState('')
+    const login = () => {
+        FirebaseLogin(email, password, navigation);
+        setEmail("");
+        setPassword("");
+    }
+    const facebook = () => {
+        continueWithFacebook();
+    }
 
-   const login = ()=>{
-       FirebaseLogin(email, password, navigation);
-       setEmail("");
-       setPassword("");
-   }
-   const facebook = () =>{
-       continueWithFacebook();
-   }
-   
+    const loadSc = () => {
+        navigation.navigate("LoaderScreen")
+
+    }
+    const load = () => {
+        loadSc()
+        setTimeout(function time() {
+        navigation.navigate("Home")
+
+        }, 5000)
+
+    }
     return (
         <ImageBackground style={styles.container}>
             <View style={styles.Logo}>
@@ -27,8 +38,6 @@ export default function Login({ navigation}) {
             <View style={styles.logo2}>
                 <Text style={styles.better}>Better</Text>
             </View>
-
-            {/* place holders for text inputs*/}
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Username"
@@ -39,37 +48,30 @@ export default function Login({ navigation}) {
                     placeholder="Password"
                     style={styles.TextInput2}
                     onChangeText={(pass) => setPassword(pass)}
+                    secureTextEntry={true}
                 />
             </View>
             <TouchableOpacity style={styles.forgot} onPress={() => navigation.navigate('Forgotpassword')}>Forgot password ?</TouchableOpacity>
             <View>
-                <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Home')}/>
-                    <Text style={styles.logintext}>Login</Text>
+                
+                <Text style={styles.logintext}>Sign in</Text>
                 <TouchableOpacity style={styles.touchableOpacity}>
-                    <Text 
+                    <Text
                         style={styles.logintext}
-                        onPress={()=> login()}
-                    >Login</Text>
+                        onPress={() => load()}
+                    >Sign in</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.AccountContainer}>
                 <Text style={styles.textaccount}>Dont have an Account?</Text>
-                <TouchableOpacity style={styles.textsignup}  onPress={() => navigation.navigate('Signup')}>Sign up</TouchableOpacity>
+                <TouchableOpacity style={styles.textsignup} onPress={() => navigation.navigate('Signup')}>Sign up</TouchableOpacity>
             </View>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.Facebook}
-                onPress={()=> facebook()}
-                >
-                    <FontAwesome5 name="facebook" size={24} color="white" style={styles.icon1} />
-                    <Text style={styles.text}>Connect with Facebook</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                style={styles.Guest}
-                onPress= {()=>navigation.navigate('Home')}
-                >
-                    <Ionicons name="people" size={24} color="white" style={styles.icon2} />
-                    <Text style={styles.text2}>Continue as Guest</Text>
-
+                onPress={() => facebook()}
+            >
+                <FontAwesome5 name="facebook" size={24} color="white" style={styles.icon1} />
+                <Text style={styles.text}>Sign in with Facebook</Text>
             </TouchableOpacity>
             <View>
                 <Text style={styles.textbottom}>By helping a soul, together we can change the world.</Text>
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
-    
+
     },
     Logo: {
         marginHorizontal: '1%',
@@ -99,25 +101,21 @@ const styles = StyleSheet.create({
     Bet: {
         position: 'absolute',
         color: 'rgba(94, 206, 253, 1)',
-        height: '42px',
-        left: '42px',
-        top: '97px',
-        fontFamily: 'arial black',
-        fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '30px',
-        lineHeight: '42px',   
+        left: 42,
+        top: 97,
+        fontWeight: 500,
+        fontSize: '24px',
+        lineHeight: '42px',
     },
     on: {
         position: 'absolute',
-        // width: '41px',
+        width: '41px',
         height: '42px',
-        left: '100px',
+        left: '80px',
         top: '97px',
-        fontFamily: 'arial black',
         fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '30px',
+        fontWeight: "normal",
+        fontSize: ' 24px',
         lineHeight: '42px',
         color: 'rgba(184, 129, 207, 1)',
     },
@@ -126,11 +124,10 @@ const styles = StyleSheet.create({
         color: 'rgba(184, 129, 207, 1)',
         height: '50px',
         left: '8%',
-        top: '125px',
-        fontFamily: 'arial black',
+        top: '120px',
         fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '30px',
+        fontWeight: "normal",
+        fontSize: '24px',
         lineHeight: '42px',
     },
     inputContainer: {
@@ -139,41 +136,39 @@ const styles = StyleSheet.create({
         bottom: '50px',
     },
     TextInput: {
-        borderWidth: '1px',
+
         position: 'absolute',
         width: '300px',
         left: '37px',
         top: '100px',
         padding: '5px',
-        height: '40px',
+        height: '45px',
         color: 'black',
         fontStyle: 'normal',
-        fontWeight: '900px',
-        // boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderColor:'rgba(0, 0, 0, 0.25)',
-        
+        fontWeight: "normal",
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '10px',
     },
     TextInput2: {
-        borderWidth: '1px',
+
         position: 'absolute',
         width: '300px',
         left: '37px',
-        top: '150px',
+        top: '160px',
         outline: 'none',
         padding: '5px',
-        height: '40px',
+        height: '45px',
         color: 'black',
         fontStyle: 'normal',
-        fontWeight: '900px',
-        // boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderColor:'rgba(0, 0, 0, 0.25)',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '10px',
     },
     touchableOpacity: {
         position: 'absolute',
         width: '300px',
         height: '59px',
         left: '37px',
-        backgroundColor: 'rgba(184, 129, 207, 1)',
+        backgroundColor: '#ffac2c',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
         borderRadius: '16px',
         top: '10px',
@@ -181,12 +176,10 @@ const styles = StyleSheet.create({
     },
     logintext: {
         position: 'absolute',
-        width: '50px',
         height: '21px',
         left: '40%',
-        fontFamily: 'arial',
         fontSize: 'normal',
-        fontweight: '100px',
+        fontWeight: "normal",
         fontSize: '18px',
         lineHeight: '21px',
         color: 'white',
@@ -205,8 +198,8 @@ const styles = StyleSheet.create({
         left: '103px',
         fontFamily: 'arial',
         fontStyle: 'normal',
-        fontweight: 'normal',
-        fontSize: '14px',
+        fontWeight: "normal",
+        fontSize: '12px',
         lineHeight: '16px',
         color: 'black',
     },
@@ -214,11 +207,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: '48px',
         height: '16px',
-        left: '250px',
+        left: '230px',
         fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight: '1000px',
-        fontSize: '14px',
+        fontWeight: "normal",
+        fontSize: '12px',
         lineHeight: '16px',
         color: 'rgba(54, 124, 255, 1)',
     },
@@ -234,13 +227,11 @@ const styles = StyleSheet.create({
     },
     text: {
         position: 'absolute',
-        width: '188px',
-        height: '21px',
-        left: '50px',
-        font_family: 'arial',
+        left: '80px',
+        fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '18px',
+        fontWeight: "normal",
+        fontSize: '14px',
         lineHeight: '21px',
         color: 'white',
         top: '20px',
@@ -258,12 +249,12 @@ const styles = StyleSheet.create({
     text2: {
         position: 'absolute',
         height: '21px',
-        left: '65px',
+        left: '90px',
         top: '20px',
         fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '18px',
+        fontWeight: "normal",
+        fontSize: '14px',
         lineHeight: '21px',
         color: 'white',
     },
@@ -298,15 +289,17 @@ const styles = StyleSheet.create({
     },
     forgot: {
         position: 'relative',
-        textAlign:'center',
+        textAlign: 'center',
         color: 'black',
         fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight: 'bolder',
+        fontWeight: "normal",
         fontSize: '12px',
-        bottom: '6%',
-        paddingLeft: '49%',
+        bottom: '1%',
+        paddingLeft: '55%',
         lineHeight: '15px',
+        marginTop: '5px'
+
     },
 })
 

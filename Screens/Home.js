@@ -1,88 +1,92 @@
-import React from 'react'
-import { Octicons, Fontisto } from '@expo/vector-icons';
-import { View, StyleSheet, TextInput, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, Image, Button } from 'react-native'
-import Map from '../auth/Components/Map';
-import bootstrap from './node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from 'react'
+import { Octicons, Fontisto, Ionicons } from '@expo/vector-icons';
+import { View, StyleSheet, Text, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, ActivityIndicator } from 'react-native'
 
+
+import { firebase } from '../config/firebase';
 export default function Home({ navigation }) {
-    let lat;
-    let lon;
-    navigator.geolocation.getCurrentPosition(success => {
-        let { latitude, longitude } = success.coords;
-        lat = latitude;
-        lon = longitude;
 
-    })
+
+    const [ngosList, setngosList] = useState([])
+
+    useEffect(() => {
+        firebase.firestore().collection('ngos').get().then((querySnapshot) => {
+            const data = querySnapshot.docs.map((doc) => ({
+
+                id: doc.id,
+                ...doc.data(),
+            }));
+
+            console.log(data)
+            setngosList(data)
+        });
+
+    }, [])
+
     return (
         <SafeAreaView style={styles.container}>
 
-            <TextInput
-                placeholder="Search"
-                style={styles.searchbar}
-            />
-            <Map />
+            <ImageBackground style={styles.bannersContainer} source={require('../assets/Background/run.jpg')}>
+                <Text style={styles.Bet}>Bet</Text><Text style={styles.on}>on</Text>
+                <Text style={styles.better}>Better</Text>
+                <Text style={styles.BannerContent}>
+                    Help affected families by sharing whatever you think its not of use.
+                </Text>
+            </ImageBackground>
             <ScrollView horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={false}
+                bounces={false}
                 style={styles.scrollcontainer}
+
             >
+
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate('Popup')}>
-                        <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children.jpg')} />
-                        <Text style={styles.headerText}>Giving Hope</Text>
-                        <Text style={styles.contentText}>
-                            Giving hope to the hopeless.
-                            together we can give hope and help a soul for better tomorrow.
-                        </Text>
 
-
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.cardContainer2} onPress={() => navigation.navigate('Popup')}>
-                        <ImageBackground style={styles.imageContainer} source={require('../assets/Background/girl.jpg')} />
-                        <Text style={styles.headerText}>Bet on Better</Text>
-                        <Text style={styles.contentText}>
-                            Giving hope to the hopeless.
-                            together we can give hope and help a soul for better tomorrow.
-                        </Text>
-
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.cardContainer3} onPress={() => navigation.navigate('Popup')}>
-                        <ImageBackground style={styles.imageContainer} source={require('../assets/Background/Children-2.jpg')} />
-                        <Text style={styles.headerText}>Bet on Better</Text>
-                        <Text style={styles.contentText}>
-                            Giving hope to the hopeless.
-                            together we can give hope and help a soul for better tomorrow.
-                        </Text>
-                    </TouchableOpacity>
+                    {ngosList.map((data) => (
+                        <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate('Popup', data)}>
+                            <ImageBackground style={styles.imageContainer} source={require('../assets/Background/children.jpg')} />
+                            <Text style={styles.headerText}>{data.orgName}</Text>
+                            <Text style={styles.contentText}>{data.orgDescription.substring(0, 55)}.....</Text>
+                        </TouchableOpacity>
+                    ))}
+                    {ngosList.map((data) => (
+                        <TouchableOpacity style={styles.cardContainer2} onPress={() => navigation.navigate('Popup', data)}>
+                            <ImageBackground style={styles.imageContainer} source={require('../assets/Background/children-2.jpg')} />
+                            <Text style={styles.headerText}>{data.orgName}</Text>
+                            <Text style={styles.contentText}>{data.orgDescription.substring(0, 55)}....</Text>
+                        </TouchableOpacity>
+                    ))}
 
                 </View>
             </ScrollView>
-            <Text style={styles.GiftText}>Gift offering</Text>
-            <View style={styles.GiftContainer}>
-                <View style={styles.Box1}>
-                <Octicons name="gift" size={50} color="rgba(184, 129, 207, 1)" style={styles.icon}/>
-                    <Text style={styles.ContentText1}>
-                        Looking for the perfect git?
+            <View style={{
+                position: 'relative',
+                width: '355px',
+                height: '110px',
+                left: '10px',
+                top: '75%',
+                backgroundColor: 'white',
+                boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
+                borderRadius: '14px',
+                borderColor: '1px solid rgba(94, 206, 253, 1)',
+            }}>
+                <View>
+                    <Text style={{ marginTop: '5px', marginLeft: '10px', fontSize: '12px', fontWeight: '500',  color: 'rgba(184, 129, 207, 1)',}}>New Campaigns</Text>
+                    <Text style={{ marginTop: '5px', marginLeft: '10px', fontSize: '9px', fontWeight: '500' ,color: '#ffac2c'}}>
+                        An NGO’s primary goal is to uplift society and raise awareness about a serious cause.
+                        Community engagement is arguably PR in literal form. Any campaign run by an NGO affects a community directly and indirectly.
+                        As a PR manager or campaign leader, you need to evaluate your internal communication strategy.
                     </Text>
-                    <TouchableOpacity style={styles.Btn1}>
-                        <Text style={styles.SendText}  onPress={() => navigation.navigate('Gift')}>Send a gift</Text>
-                    </TouchableOpacity>
+                    <TouchableOpacity style={{ marginTop: '5px', marginLeft: '10px' }} onPress={() => navigation.navigate('Explore')}><Text style={styles.ExploreText2}>View now..</Text></TouchableOpacity>
                 </View>
+            </View>
+            <View style={{ position: 'fixed', backgroundColor: 'rgba(15, 16, 17, 0.37)', width: '375px', height: '55px', left: '0px', top: '95%', }}>
+                <Ionicons name="gift-sharp" size={24} color="#ffac2c" style={{ marginTop: '1px', textAlign: 'center'}}/>
+                <Text style={{ marginTop: '0px', textAlign: 'center', color: 'white', fontSize: '9px', fontWeight: '500'}} onPress={() => navigation.navigate('Gift')}>Click me to send Gift</Text>
 
             </View>
-            <Text style={styles.ExploreText}>Explore</Text>
-            <View style={styles.GiftContainer2}>
-                <View style={styles.Box2}>
-                <Fontisto name="world" size={50} color="rgba(94, 206, 253, 1)" style={styles.icon}/>
-                    <Text style={styles.ContentText1}>
-                        Change lives every
-                        month with The Table
-                    </Text>
-                    <TouchableOpacity style={styles.Btn2} onPress={() => navigation.navigate('Explore')}>
-                        <Text style={styles.ExploreText2}>Explore</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+
 
         </SafeAreaView>
     )
@@ -93,71 +97,111 @@ const styles = StyleSheet.create({
         position: 'relative',
         width: '375px',
         height: '812px',
+        backgroundColor: 'white'
     },
-    icon:{
+    bannersContainer: {
+        position: "absolute",
+        width: "375px",
+        height: "440px",
+        left: "0px",
+        top: "0px",
+    },
+    NearestText: {
         position: 'absolute',
-        left: 20,
-        top: 10,
+        left: "20px",
+        top: "440px",
+        fontFamilyt: 'arial',
+        fontWeight: 'normal',
+        fontSize: "12px",
+        lineHeight: "14px",
+        color: 'rgba(94, 206, 253, 1)'
+    },
+    Bet: {
+        position: 'absolute',
+        left: "6px",
+        top: "375px",
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: "14px",
+        lineHeight: "16px",
+        color: 'rgba(94, 206, 253, 1)',
+    },
+    on: {
+        position: 'absolute',
+        left: "30px",
+        top: "375px",
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: "14px",
+        lineHeight: "16px",
+        color: 'rgba(184, 129, 207, 1)',
+    },
+    better: {
+        position: 'absolute',
+        left: "6px",
+        top: "390px",
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: "14px",
+        lineHeight: "16px",
+        color: 'rgba(94, 206, 253, 1)',
+    },
+    BannerContent: {
+        position: 'absolute',
+        left: "6px",
+        top: "415px",
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: "9px",
+        lineHeight: "16px",
+        color: '#ffffff'
+    },
+    icon: {
+        position: 'absolute',
+        left: "20px",
+        top: "10px",
     },
     topContainer: {
         position: 'absolute',
         width: '375px',
         height: '133px',
         backgroundColor: 'rgba(184, 129, 207, 1)',
-        boxshadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        boxshadow: '0px 4px 4px rgba(0,0,0, 0.2)',
     },
-    searchbar: {
-        position: 'absolute',
-        width: '359px',
-        height: '40px',
-        left: 9,
-        top: 69,
-        backgroundColor: 'white',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        outline: 'none',
-        borderRadius: '16px',
-        paddingLeft: '5%',
-    },
-
     scrollcontainer: {
         position: 'absolute',
         height: '141px',
-        left: 0,
-        top: 387,
+        top: "450px",
+        width: '375px',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+    },
+    scrollcontainer2: {
+        position: 'absolute',
+        height: '141px',
+        top: "377px",
         backgroundColor: 'rgba(255, 255, 255, 1)',
     },
     cardContainer: {
         position: 'absolute',
         width: '207px',
-        height: '119px',
-        left: 8,
-        top: 10,
+        height: '125px',
+        left: "8px",
+        top: "10px",
         backgroundColor: '#ffffff',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
         borderRadius: '14px',
         borderColor: 'rgba(94, 206, 253, 1)'
     },
     cardContainer2: {
         position: 'relative',
         width: '207px',
-        height: '119px',
+        height: '125px',
         left: '230px',
-        top: 10,
+        top: "10px",
         backgroundColor: '#ffffff',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
         borderRadius: '14px',
         borderColor: '1px solid rgba(94, 206, 253, 1)'
-
-    },
-    cardContainer3: {
-        position: 'relative',
-        width: '207px',
-        height: '119px',
-        left: '245px',
-        top: 10,
-        backgroundColor: '#ffffff',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '14px'
     },
     imageContainer: {
         position: 'absolute',
@@ -166,7 +210,7 @@ const styles = StyleSheet.create({
         left: '10px',
         top: '5px',
         backgroundColor: 'gray',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.2)',
         borderRadius: '5px'
     },
     headerText: {
@@ -174,22 +218,20 @@ const styles = StyleSheet.create({
         height: '16px',
         left: '100px',
         top: '5px',
-        fontFamily: 'arial black ',
         fontStyle: 'normal',
-        fontWeight: '900',
-        fontSize: '14px',
-        lineHeight: '16px',
-        color: 'rgba(63, 131, 224, 1)'
+        fontWeight: "500px",
+        fontSize: "9px",
+        lineHeight: "16px",
+        color: 'rgba(184, 129, 207, 1)',
     },
     contentText: {
         position: 'absolute',
         width: '100px',
         left: '100px',
-        top: '25px',
-        fontFamily: 'arial',
+        top: '20px',
         fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '11px',
+        fontWeight: "500px",
+        fontSize: "11px",
         color: 'rgba(0, 0, 0, 0.74)',
     },
     textbottom: {
@@ -227,111 +269,27 @@ const styles = StyleSheet.create({
     },
     GiftContainer: {
         position: 'relative',
-        width: '359px',
-        height: '100px',
-        left: 10,
-        top: 545,
-        backgroundColor: '#ffffff',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '14px',
+        width: "341px",
+        height: "93px",
+        left: "15px",
+        border: "1px solid rgba(184, 129, 207, 1)",
+        boxSizing: "border-box",
+        borderRadius: "10px",
+        top: "635px",
     },
     GiftContainer2: {
         position: 'relative',
-        width: '359px',
-        height: '100px',
-        left: 10,
-        top: 565,
-        backgroundColor: '#ffffff',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '14px',
+        width: "341px",
+        height: "99px",
+        left: "15px",
+        border: "1px solid rgba(184, 129, 207, 1)",
+        boxSizing: "border-box",
+        borderRadius: "10px",
+        top: "640px",
     },
-    GiftText: {
-        position: 'absolute',
-        left: 20,
-        top: 529,
-        fontFamilyt: 'arial',
-        fontWeight: 500,
-        fontSize: 12,
-        lineHeight: 14,
-    },
-    ExploreText: {
-        position: 'absolute',
-        left: 20,
-        top: 650,
-        fontFamilyt: 'arial',
-        fontStyle: 'normal',
-        fontSize: 12,
-        lineHeight: 14,
-        fontweight: 900,
-    },
-    Box1: {
-        position: 'absolute',
-        width: 86,
-        height: 74,
-        left: 15,
-        top: 10,
-        backgroundColor: '#ffffff',
-        border: '1px solid #8881CF',
-        boxSizing: 'border-box',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '16px',
-    },
-    Box2: {
-        position: 'absolute',
-        width: 86,
-        height: 74,
-        left: 15,
-        top: 16,
-        backgroundColor: '#ffffff',
-        border: '1px solid #8881CF',
-        boxSizing: 'border-box',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '16px',
-    },
-    Btn1: {
-        position: 'absolute',
-        width: 235,
-        height: 35,
-        left: 100,
-        top: 37,
-        backgroundColor: '#B881CF',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '16px',
-    },
-    SendText: {
-        position: 'absolute',
-        left: 80,
-        top: 7,
-        color: '#FFFFFF',
-    },
-    Btn2: {
-        position: 'absolute',
-        width: 235,
-        height: 35,
-        left: 100,
-        top: 37,
-        backgroundColor: '#B881CF',
-        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius: '16px',
-    },
-    ExploreText2: {
-        position: 'absolute',
-        position: 'absolute',
-        left: 80,
-        top: 7,
-        color: '#FFFFFF',
-    },
-    ContentText1: {
-        position: 'absolute',
-        width: 200,
-        left: 110,
-        top: 0,
-        fontFamily: ' sans-serif',
-        fontSize: 'normal',
-        fontWeight: '500px',
-        fontsize: 5,
-        lineHeight: 15,
-        color: 'rgba(0,0,0,0.63)',
-    },
+
+
+
+
 })
 

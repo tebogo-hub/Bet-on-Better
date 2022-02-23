@@ -1,5 +1,8 @@
 import { firebase } from "../config/firebase";
 import Alerting from "./Alerting";
+
+
+
 const FirebaseSignUp = (name, email, password,navi) => {
   let msg = "Successfully Signed Up!!";
   let title = 'Welldone'
@@ -18,4 +21,4 @@ const FirebaseSignUp = (name, email, password,navi) => {
     .catch((err) => console.log(err));
 };
 
-export { FirebaseSignUp};
+export { FirebaseSignUp };

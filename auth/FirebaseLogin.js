@@ -1,6 +1,11 @@
 import { firebase } from "../config/firebase";
 import Alerting from "./Alerting";
+
+
+
 export default function FirebaseLogin(email, password,navi) {
+
+  
   let msg = "signed in";
   let title = 'Welcome User'
   firebase
@@ -15,6 +20,5 @@ export default function FirebaseLogin(email, password,navi) {
     .catch((error) => {
       var errorMessage = error.message;
       console.log(errorMessage);
-    });
-  
+    }); 
 }

@@ -18,7 +18,7 @@ function Forgotpassword({navigation}) {
             <View style={styles.box}>
                 <Text style={styles.Forgot}>Forgot Password</Text>
                 <TextInput
-                  placeholder=" Your E-mail Address "
+                  placeholder="     Email Address   "
                   style={styles.TextInput}
                   onChangeText={(email) => setEmail(email)}
                 />
@@ -50,25 +50,22 @@ const styles = StyleSheet.create({
     Bet: {
         position: 'absolute',
         color: 'rgba(94, 206, 253, 1)',
-        height: '42px',
         left: '42px',
         top: '97px',
-        fontFamily: 'arial black',
         fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '30px',
+        fontWeight: 500,
+        fontSize: 24,
         lineHeight: '42px',   
     },
     on: {
         position: 'absolute',
-        // width: '41px',
+        width: '41px',
         height: '42px',
-        left: '100px',
+        left:80,
         top: '97px',
-        fontFamily: 'arial black',
         fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '30px',
+        fontWeight: 500,
+        fontSize: 24,
         lineHeight: '42px',
         color: 'rgba(184, 129, 207, 1)',
     },
@@ -77,14 +74,12 @@ const styles = StyleSheet.create({
         color: 'rgba(184, 129, 207, 1)',
         height: '50px',
         left: '8%',
-        top: '125px',
-        fontFamily: 'arial black',
+        top:120,
         fontStyle: 'normal',
-        fontWeight: '100',
-        fontSize: '30px',
-        lineHeight: '42px',
+        fontWeight: 500,
+        fontSize: 24,
+        lineHeight: 42,
     },
- 
     textContainer: {
         position: 'absolute',
         width: '127',
@@ -104,12 +99,11 @@ const styles = StyleSheet.create({
         height: '28px',
         left: '70px',
         top: '88px',
-        fontFamily: 'arial',
         fontStyle: 'normal',
-        fontWeight: '900px',
+        fontWeight: 500,
         fontSize: '24px',
         lineHeight: '28px',
-        color: 'rgba(54, 124, 255, 1)'
+        color: '#ffac2c'
     },
     box: {
         position: 'absolute',
@@ -120,7 +114,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(243, 245, 253, 0.5)',
         borderRadius:'0px',
         boxsizing: 'border-box',
-        border: '1px solid rgba(0, 0, 0, 0.25)'
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '14px',
     },
     Forgot: {
         position: 'absolute',
@@ -128,12 +123,11 @@ const styles = StyleSheet.create({
         height: '18px',
         left: '86px',
         top: '20px',
-
         fontStyle: 'normal',
-        fontWeight:'900px',
+        fontWeight:500,
         fontSize: '18px',
         lineHeight: '28px',
-        color: 'rgba(0, 0, 0, 0.63)'
+        color: '#ffac2c'
     },
     TextInput:{
         position: 'absolute',
@@ -144,7 +138,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white', 
         borderColor:'black',
         borderRadius:'0px',
-        border: '1px solid rgba(0, 0, 0, 0.25)', 
+        boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
+        borderRadius: '14px',
     },
     button: {
         position: 'absolute',
@@ -152,9 +147,9 @@ const styles = StyleSheet.create({
         height: '30px',
         left:'30%',
         top:'200px',
-        backgroundColor: 'rgba(184, 129, 207, 1)',
+        backgroundColor: '#ffac2c',
         boxShadow: '0px 4px 4px rgba(0,0,0, 0.25)',
-        borderRadius:'15px',
+        borderRadius:10,
     },
     resetpassword: {
         position: 'absolute',
